@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Interaction interaction;
 
+    //rooms
+    public GameObject currentRoom;
+    public GameObject prevRoom;
+    private string prevRoomDirection;
+
     //singleton
     private static PlayerController _player;
     public static PlayerController instance { get { return _player; } }
@@ -34,7 +39,7 @@ public class PlayerController : MonoBehaviour
         //singleton
         if (_player != null && _player != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         else
         {
@@ -82,13 +87,16 @@ public class PlayerController : MonoBehaviour
     {
         if(state != playerState.Crossing)
         {
-            //first port
+            //entering door
             state = playerState.Crossing;
             enterDoor = true;
+            FadeManager.FadeOut();
         }
         else
         {
+            //exiting door
             enterDoor = false;
+            FadeManager.FadeIn();
         }
         movement = vector;
     }
@@ -101,7 +109,7 @@ public class PlayerController : MonoBehaviour
             if(movement.x == 0 && movement.y > 0)
             {
                 //top -> bottom
-                transform.position = new Vector2(transform.position.x, -6f);
+                transform.position = new Vector2(transform.position.x, -6.1f);
             }
             else if(movement.x > 0 && movement.y == 0)
             {
@@ -111,13 +119,17 @@ public class PlayerController : MonoBehaviour
             else if(movement.x == 0 && movement.y < 0)
             {
                 //bottom -> top
-                transform.position = new Vector2(transform.position.x, 6f);
+                transform.position = new Vector2(transform.position.x, 5.1f);
             }
             else
             {
                 //left -> right
                 transform.position = new Vector2(6.5f, transform.position.y);
             }
+
+            //set previous room direction
+            //spawn new room or retrieve previous one
+
         }
         else
         {
