@@ -5,12 +5,7 @@ using UnityEngine;
 public class Room : MonoBehaviour, ISerializationCallbackReceiver
 {
     public int id = 0; //used to track if this room has been used
-    public string doors = ""; //random door configurations are generated on spawn (taking one entrance as a paramater) and stored here
-
-    private void Start()
-    {
-        
-    }
+    public string doors = ""; //door configuration
 
     public void OnBeforeSerialize()
     {

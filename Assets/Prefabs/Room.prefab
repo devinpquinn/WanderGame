@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  doors: NESW
+  doors: 
 --- !u!1 &776603296384489841
 GameObject:
   m_ObjectHideFlags: 0

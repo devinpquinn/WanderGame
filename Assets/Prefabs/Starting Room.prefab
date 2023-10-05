@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 776603296052154109, guid: d282b7e56f19dcd42b91ebf819b0749b, type: 3}
+      propertyPath: doors
+      value: NESW
+      objectReference: {fileID: 0}
     - target: {fileID: 776603296052154110, guid: d282b7e56f19dcd42b91ebf819b0749b, type: 3}
       propertyPath: m_Name
       value: Starting Room

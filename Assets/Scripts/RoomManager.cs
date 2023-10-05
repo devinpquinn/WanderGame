@@ -7,7 +7,7 @@ public class RoomManager : MonoBehaviour
     public List<GameObject> roomsAvailable;
     public GameObject currentRoom;
     public GameObject prevRoom;
-    public string prevRoomDirection;
+    private string prevRoomDirection;
 
     //singleton
     private static RoomManager rm;
@@ -43,6 +43,8 @@ public class RoomManager : MonoBehaviour
 
         //setup currentRoom
         currentRoom = Instantiate(currentRoom);
+
+        //if not starting room, setup blockers from currentroom
     }
 
     public static void NewRoom(string enterFrom)
@@ -67,7 +69,16 @@ public class RoomManager : MonoBehaviour
         {
             //randomly pick a new room
             //check if you've exhausted all the rooms:
-            if(instance.roomsAvailable.Count < 1)
+            bool validRooms = false;
+            for(int i = 0; i < instance.roomsAvailable.Count; i++)
+            {
+                if(instance.roomsAvailable[i].GetComponent<Room>().doors.Length < 1 || instance.roomsAvailable[i].GetComponent<Room>().doors.Contains(enterFrom))
+                {
+                    validRooms = true;
+                    break;
+                }
+            }
+            if (!validRooms)
             {
                 Debug.Log("OUT OF ROOMS!");
                 return;
@@ -76,16 +87,28 @@ public class RoomManager : MonoBehaviour
             {
                 Destroy(instance.prevRoom);
 
+                //pick room
                 GameObject newRoom;
                 int key = Random.Range(0, instance.roomsAvailable.Count);
                 newRoom = instance.roomsAvailable[key];
+                while(newRoom.GetComponent<Room>().doors.Length > 0 && !newRoom.GetComponent<Room>().doors.Contains(enterFrom))
+                {
+                    key = Random.Range(0, instance.roomsAvailable.Count);
+                    newRoom = instance.roomsAvailable[key];
+                }
+
+                //generate and store blockers for currentRoom
+                string newRoomDoorsPreset = newRoom.GetComponent<Room>().doors;
+                if (newRoomDoorsPreset.Length < 1)
+                {
+                    //random doors
+                    newRoom.GetComponent<Room>().doors = RandomDoors(enterFrom);
+                }
 
                 //remove it from list and set as current room
                 instance.roomsAvailable.RemoveAt(key);
                 instance.prevRoom = instance.currentRoom;
                 instance.currentRoom = newRoom;
-
-                //generate and store random blockers for currentRoom
             }
         }
 
@@ -102,5 +125,30 @@ public class RoomManager : MonoBehaviour
         }
 
         //send message to blockermanager from currentroom's blockers string
+        BlockerManager.SetupBlockers(instance.currentRoom.GetComponent<Room>().doors);
+    }
+
+    public static string RandomDoors(string entry)
+    {
+        string theseDoors = "";
+        if(entry.Contains("N") || Random.Range(0, 2) > 0)
+        {
+            theseDoors += "N";
+        }
+        if (entry.Contains("E") || Random.Range(0, 2) > 0)
+        {
+            theseDoors += "E";
+        }
+        if (entry.Contains("S") || Random.Range(0, 2) > 0)
+        {
+            theseDoors += "S";
+        }
+        if (entry.Contains("W") || Random.Range(0, 2) > 0)
+        {
+            theseDoors += "W";
+        }
+
+
+        return theseDoors;
     }
 }
