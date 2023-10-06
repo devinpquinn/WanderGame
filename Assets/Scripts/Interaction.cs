@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
-public class Interaction : MonoBehaviour
+public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 {
+    public int id = 0; //used to track this interaction for saving/loading
+
     public List<DialogText> dialogs;
     private int dialogIndex = 0;
     private int lineIndex = 0;
@@ -42,6 +44,10 @@ public class Interaction : MonoBehaviour
         dialogueText = PlayerController.instance.dialogueText;
 
         //check if loading save state?
+        if(PlayerPrefs.HasKey("Dialog_" + id))
+        {
+            dialogIndex = PlayerPrefs.GetInt("Dialog_" + id);
+        }
     }
 
     public void Interact()
@@ -77,6 +83,20 @@ public class Interaction : MonoBehaviour
             PlayerController.instance.state = PlayerController.playerState.Exploring;
 
             //save dialogue state?
+            PlayerPrefs.SetInt("Dialog_" + id, dialogIndex);
         }
+    }
+
+    public void OnBeforeSerialize()
+    {
+        if (id == 0)
+        {
+            id = Random.Range(100000000, 999999999);
+        }
+    }
+
+    public void OnAfterDeserialize()
+    {
+        //has to be implemented
     }
 }

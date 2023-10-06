@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180a8e01ec708994da589461aff84695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: -1
   dialogs:
   - lines:
     - '"Stick to the path, no matter the cost."'

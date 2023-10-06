@@ -121,7 +121,7 @@ public class RoomManager : MonoBehaviour
         {
             //clear save data
             PlayerPrefs.DeleteAll();
-            Debug.Log("clearing save data");
+            Debug.Log("CLEARING DATA");
         }
     }
 
