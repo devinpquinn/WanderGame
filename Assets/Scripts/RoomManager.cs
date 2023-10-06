@@ -12,6 +12,7 @@ public class RoomManager : MonoBehaviour
     //passthrough
     public GameObject passthroughRoom;
     private int passthroughTimer = 0;
+    private string passthroughString = "001112223";
 
     //singleton
     private static RoomManager rm;
@@ -83,7 +84,7 @@ public class RoomManager : MonoBehaviour
             else
             {
                 //if not, generate a new passthrough timer and a new room
-                instance.passthroughTimer = Random.Range(0, 3);
+                instance.GeneratePassthroughTimer();
                 //check if you've exhausted all the rooms:
                 bool validRooms = false;
                 for (int i = 0; i < instance.roomsAvailable.Count; i++)
@@ -98,7 +99,8 @@ public class RoomManager : MonoBehaviour
                 {
                     //do something here to conclude the game; maybe just exit to menu when that exists
                     Debug.Log("OUT OF ROOMS!");
-                    return;
+                    instance.prevRoom = instance.currentRoom;
+                    instance.currentRoom = instance.passthroughRoom;
                 }
                 else
                 {
@@ -169,5 +171,13 @@ public class RoomManager : MonoBehaviour
 
 
         return theseDoors;
+    }
+
+    public void GeneratePassthroughTimer()
+    {
+        int key = Random.Range(0, passthroughString.Length);
+        int timer = int.Parse(passthroughString.Substring(key, 1));
+        passthroughTimer = timer;
+        Debug.Log(timer);
     }
 }
