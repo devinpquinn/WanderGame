@@ -1782,7 +1782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"Stray from the path, and all will be lost."'
+  m_text: '"Lorem ipsum dolor sit amet."'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1791,7 +1791,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286615295
+    rgba: 4293981936
   m_fontColor: {r: 0.9411765, g: 0.9647059, b: 0.9411765, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1815,9 +1815,9 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2952,7 +2952,7 @@ MonoBehaviour:
   roomsAvailable: []
   currentRoom: {fileID: 2215454288375588934, guid: b584d3a0e22cddf42970375e8bc3d907, type: 3}
   prevRoom: {fileID: 0}
-  prevRoomDirection: 
+  passthroughRoom: {fileID: 5191977484901045291, guid: 0f73816887b6283408d0d5fd320c33d2, type: 3}
 --- !u!1001 &1777805296
 PrefabInstance:
   m_ObjectHideFlags: 0
