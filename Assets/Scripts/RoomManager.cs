@@ -7,12 +7,16 @@ public class RoomManager : MonoBehaviour
     public List<GameObject> roomsAvailable;
     public GameObject currentRoom;
     public GameObject prevRoom;
+    [SerializeField]
     private string prevRoomDirection;
 
     //passthrough
     public GameObject passthroughRoom;
     private int passthroughTimer = 0;
     private string passthroughString = "001112223";
+
+    //misc
+    public GameObject startingRoom;
 
     //singleton
     private static RoomManager rm;
@@ -36,20 +40,89 @@ public class RoomManager : MonoBehaviour
     {
         //fill list of rooms
         roomsAvailable = new List<GameObject>();
+        bool loadingSave = PlayerPrefs.HasKey("CurrentRoom");
         Object[] roomsToCheck = Resources.LoadAll("Rooms", typeof(GameObject));
         for(int i = 0; i < roomsToCheck.Length; i++)
         {
             GameObject thisRoom = (GameObject)roomsToCheck[i];
-            if(thisRoom.GetComponent<Room>().id > 1) //replace this with a playerprefs check
+
+            if(!PlayerPrefs.HasKey("Room_" + thisRoom.GetComponent<Room>().id))
             {
                 roomsAvailable.Add(thisRoom);
             }
+            if (loadingSave)
+            {
+                //check if this is the current room
+                if(PlayerPrefs.GetInt("CurrentRoom") == thisRoom.GetComponent<Room>().id)
+                {
+                    currentRoom = Instantiate(thisRoom);
+                }
+                //check if this is the previous room
+                else if (PlayerPrefs.GetInt("PrevRoom") == thisRoom.GetComponent<Room>().id)
+                {
+                    prevRoom = Instantiate(thisRoom);
+                    prevRoom.SetActive(false);
+                }
+                //set prev room direction
+                prevRoomDirection = PlayerPrefs.GetString("PrevRoomDirection");
+            }
         }
 
-        //setup currentRoom
-        currentRoom = Instantiate(currentRoom);
+        if (!loadingSave)
+        {
+            //fresh start
+            currentRoom = startingRoom;
+            currentRoom = Instantiate(currentRoom);
+            GeneratePassthroughTimer();
+        }
+        else
+        {
+            //if we saved in a passthrough room, which is not in the resources folder
+            if (currentRoom == null)
+            {
+                currentRoom = Instantiate(passthroughRoom);
+            }
+            passthroughTimer = PlayerPrefs.GetInt("PassthroughTimer");
+        }
 
-        //if not starting room, setup blockers from currentroom
+        //if the prev room when saved was a passthrough room, which is not in the resources folder
+        if (prevRoom == null)
+        {
+            if(PlayerPrefs.GetInt("PrevRoom") == 1)
+            {
+                //lmao you saved right out of the starting room? really?
+                prevRoom = Instantiate(startingRoom);
+                prevRoom.SetActive(false);
+            }
+            else
+            {
+                prevRoom = Instantiate(passthroughRoom);
+                prevRoom.SetActive(false);
+            }
+        }
+
+        //load current and previous room blockers?
+        if (loadingSave)
+        {
+            currentRoom.GetComponent<Room>().doors = PlayerPrefs.GetString("CurrentRoomDoors");
+            if(prevRoom != null)
+            {
+                prevRoom.GetComponent<Room>().doors = PlayerPrefs.GetString("PrevRoomDoors");
+            }
+        }
+
+        //send message to blockermanager from currentroom's blockers string
+        BlockerManager.SetupBlockers(instance.currentRoom.GetComponent<Room>().doors);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            //clear save data
+            PlayerPrefs.DeleteAll();
+            Debug.Log("clearing save data");
+        }
     }
 
     public static void NewRoom(string enterFrom)
@@ -78,6 +151,7 @@ public class RoomManager : MonoBehaviour
             if(instance.passthroughTimer > 0)
             {
                 instance.passthroughTimer--;
+                PlayerPrefs.SetInt("PassthroughTimer", instance.passthroughTimer);
                 instance.prevRoom = instance.currentRoom;
                 instance.currentRoom = instance.passthroughRoom;
             }
@@ -85,6 +159,7 @@ public class RoomManager : MonoBehaviour
             {
                 //if not, generate a new passthrough timer and a new room
                 instance.GeneratePassthroughTimer();
+                PlayerPrefs.SetInt("PassthroughTimer", instance.passthroughTimer);
                 //check if you've exhausted all the rooms:
                 bool validRooms = false;
                 for (int i = 0; i < instance.roomsAvailable.Count; i++)
@@ -115,6 +190,10 @@ public class RoomManager : MonoBehaviour
                         key = Random.Range(0, instance.roomsAvailable.Count);
                         newRoom = instance.roomsAvailable[key];
                     }
+
+                    //update save data
+                    string addID = "Room_" + instance.roomsAvailable[key].GetComponent<Room>().id.ToString();
+                    PlayerPrefs.SetInt(addID, 1);
 
                     //remove it from list and set as current room
                     instance.roomsAvailable.RemoveAt(key);
@@ -147,6 +226,15 @@ public class RoomManager : MonoBehaviour
 
         //send message to blockermanager from currentroom's blockers string
         BlockerManager.SetupBlockers(instance.currentRoom.GetComponent<Room>().doors);
+
+        //save current room, previous room, and previous room direction
+        PlayerPrefs.SetInt("CurrentRoom", instance.currentRoom.GetComponent<Room>().id);
+        PlayerPrefs.SetInt("PrevRoom", instance.prevRoom.GetComponent<Room>().id);
+        PlayerPrefs.SetString("PrevRoomDirection", enterFrom);
+
+        //save blockers
+        PlayerPrefs.SetString("PrevRoomDoors", instance.prevRoom.GetComponent<Room>().doors);
+        PlayerPrefs.SetString("CurrentRoomDoors", instance.currentRoom.GetComponent<Room>().doors);
     }
 
     public static string RandomDoors(string entry)
@@ -178,6 +266,10 @@ public class RoomManager : MonoBehaviour
         int key = Random.Range(0, passthroughString.Length);
         int timer = int.Parse(passthroughString.Substring(key, 1));
         passthroughTimer = timer;
-        Debug.Log(timer);
+    }
+
+    public void ClearSaveData()
+    {
+
     }
 }

@@ -27,7 +27,7 @@ public class Interaction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && Time.timeSinceLevelLoad > 1)
         {
             if (PlayerController.instance.state == PlayerController.playerState.Exploring)
             {
@@ -40,6 +40,8 @@ public class Interaction : MonoBehaviour
     {
         dialogueCard = PlayerController.instance.dialogueCard;
         dialogueText = PlayerController.instance.dialogueText;
+
+        //check if loading save state?
     }
 
     public void Interact()
@@ -73,6 +75,8 @@ public class Interaction : MonoBehaviour
             dialogIndex++;
             dialogueCard.SetActive(false);
             PlayerController.instance.state = PlayerController.playerState.Exploring;
+
+            //save dialogue state?
         }
     }
 }

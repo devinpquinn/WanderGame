@@ -2950,9 +2950,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsAvailable: []
-  currentRoom: {fileID: 2215454288375588934, guid: b584d3a0e22cddf42970375e8bc3d907, type: 3}
+  currentRoom: {fileID: 0}
   prevRoom: {fileID: 0}
+  prevRoomDirection: 
   passthroughRoom: {fileID: 5191977484901045291, guid: 0f73816887b6283408d0d5fd320c33d2, type: 3}
+  startingRoom: {fileID: 2215454288375588934, guid: b584d3a0e22cddf42970375e8bc3d907, type: 3}
 --- !u!1001 &1777805296
 PrefabInstance:
   m_ObjectHideFlags: 0

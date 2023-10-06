@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 3f;
     Vector2 movement;
     private bool enterDoor;
+    private bool stopped = true;
 
     //interaction
     public GameObject dialogueCard;
@@ -52,6 +53,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        //load position
+        if(PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY"))
+        {
+            transform.position = new Vector2(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"));
+        }
+    }
+
     #region Updates
 
     void Update()
@@ -60,6 +70,21 @@ public class PlayerController : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
+
+            //if we've stopped, save player position
+            if(movement.sqrMagnitude == 0)
+            {
+                if (!stopped)
+                {
+                    stopped = true;
+                    PlayerPrefs.SetFloat("PlayerX", transform.position.x);
+                    PlayerPrefs.SetFloat("PlayerY", transform.position.y);
+                }
+            }
+            else
+            {
+                stopped = false;
+            }
         }
 
         if(state == playerState.Interacting)
