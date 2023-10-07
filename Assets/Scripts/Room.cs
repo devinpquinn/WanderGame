@@ -12,7 +12,10 @@ public class Room : MonoBehaviour, ISerializationCallbackReceiver
         if(id == 0)
         {
             id = Random.Range(100000000, 999999999);
-            gameObject.name = "Room " + id.ToString();
+            if (gameObject.name.Contains("Room"))
+            {
+                gameObject.name = "Room " + id.ToString();
+            }
         }
     }
 

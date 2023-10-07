@@ -9,6 +9,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
     public int id = 0; //used to track this interaction for saving/loading
 
     public List<DialogText> dialogs;
+    public List<UnityEvent> events;
     private int dialogIndex = 0;
     private int lineIndex = 0;
 
@@ -62,6 +63,12 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             dialogueCard.SetActive(true);
             lineIndex = 0;
             dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
+
+            //play event
+            if(events.Count > dialogIndex && events[dialogIndex] != null)
+            {
+                events[dialogIndex].Invoke();
+            }
         }
     }
 
