@@ -135,14 +135,6 @@ public class RoomManager : MonoBehaviour
         PlayerController.instance.InitializePosition();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PlayerPrefs.DeleteAll();
-        }
-    }
-
     public static void NewRoom(string enterFrom)
     {
         //are we returning to the previous room?

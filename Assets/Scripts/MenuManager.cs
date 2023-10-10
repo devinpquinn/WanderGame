@@ -28,11 +28,8 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = true;
 
         //check if continue button should be shown
-        if (PlayerPrefs.HasKey("CurrentRoom"))
-        {
-            continueButton.SetActive(true);
-        }
-        else
+        continueButton.SetActive(true);
+        if (Time.timeSinceLevelLoad < 1 && !PlayerPrefs.HasKey("CurrentRoom"))
         {
             continueButton.SetActive(false);
         }
