@@ -38,22 +38,37 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
+        InitializeRooms();
+    }
+
+    public void InitializeRooms()
+    {
+        //cleanup
+        if(currentRoom != null)
+        {
+            Destroy(currentRoom);
+        }
+        if(prevRoom != null)
+        {
+            Destroy(prevRoom);
+        }
+
         //fill list of rooms
         roomsAvailable = new List<GameObject>();
         bool loadingSave = PlayerPrefs.HasKey("CurrentRoom");
         Object[] roomsToCheck = Resources.LoadAll("Rooms", typeof(GameObject));
-        for(int i = 0; i < roomsToCheck.Length; i++)
+        for (int i = 0; i < roomsToCheck.Length; i++)
         {
             GameObject thisRoom = (GameObject)roomsToCheck[i];
 
-            if(!PlayerPrefs.HasKey("Room_" + thisRoom.GetComponent<Room>().id))
+            if (!PlayerPrefs.HasKey("Room_" + thisRoom.GetComponent<Room>().id))
             {
                 roomsAvailable.Add(thisRoom);
             }
             if (loadingSave)
             {
                 //check if this is the current room
-                if(PlayerPrefs.GetInt("CurrentRoom") == thisRoom.GetComponent<Room>().id)
+                if (PlayerPrefs.GetInt("CurrentRoom") == thisRoom.GetComponent<Room>().id)
                 {
                     currentRoom = Instantiate(thisRoom);
                 }
@@ -73,6 +88,8 @@ public class RoomManager : MonoBehaviour
             //fresh start
             currentRoom = startingRoom;
             currentRoom = Instantiate(currentRoom);
+            prevRoom = prevRoom = Instantiate(passthroughRoom);
+            prevRoom.SetActive(false);
             GeneratePassthroughTimer();
         }
         else
@@ -88,7 +105,7 @@ public class RoomManager : MonoBehaviour
         //if the prev room when saved was a passthrough room, which is not in the resources folder
         if (prevRoom == null)
         {
-            if(PlayerPrefs.GetInt("PrevRoom") == 1)
+            if (PlayerPrefs.GetInt("PrevRoom") == 1)
             {
                 //lmao you saved right out of the starting room? really?
                 prevRoom = Instantiate(startingRoom);
@@ -105,7 +122,7 @@ public class RoomManager : MonoBehaviour
         if (loadingSave)
         {
             currentRoom.GetComponent<Room>().doors = PlayerPrefs.GetString("CurrentRoomDoors");
-            if(prevRoom != null)
+            if (prevRoom != null)
             {
                 prevRoom.GetComponent<Room>().doors = PlayerPrefs.GetString("PrevRoomDoors");
             }
@@ -113,15 +130,16 @@ public class RoomManager : MonoBehaviour
 
         //send message to blockermanager from currentroom's blockers string
         BlockerManager.SetupBlockers(instance.currentRoom.GetComponent<Room>().doors);
+
+        //set player position
+        PlayerController.instance.InitializePosition();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            //clear save data
             PlayerPrefs.DeleteAll();
-            Debug.Log("CLEARING DATA");
         }
     }
 
@@ -266,10 +284,5 @@ public class RoomManager : MonoBehaviour
         int key = Random.Range(0, passthroughString.Length);
         int timer = int.Parse(passthroughString.Substring(key, 1));
         passthroughTimer = timer;
-    }
-
-    public void ClearSaveData()
-    {
-
     }
 }

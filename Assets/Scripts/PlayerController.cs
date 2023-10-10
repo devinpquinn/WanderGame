@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,12 +23,11 @@ public class PlayerController : MonoBehaviour
     //interaction
     public GameObject dialogueCard;
     public TextMeshProUGUI dialogueText;
+    [HideInInspector]
     public Interaction interaction;
 
-    //rooms
-    public GameObject currentRoom;
-    public GameObject prevRoom;
-    private string prevRoomDirection;
+    //menu
+    public GameObject menu;
 
     //singleton
     private static PlayerController _player;
@@ -55,10 +55,19 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        InitializePosition();
+    }
+
+    public void InitializePosition()
+    {
         //load position
-        if(PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY"))
+        if (PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY"))
         {
             transform.position = new Vector2(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"));
+        }
+        else
+        {
+            transform.position = new Vector2(0, -0.5f);
         }
     }
 
@@ -85,6 +94,15 @@ public class PlayerController : MonoBehaviour
             {
                 stopped = false;
             }
+
+            //check for menu input
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                state = playerState.Locked;
+                UnityEvent myEvent = new UnityEvent();
+                myEvent.AddListener(OpenMenu);
+                FadeManager.FadeCross(myEvent);
+            }
         }
 
         if(state == playerState.Interacting)
@@ -95,6 +113,11 @@ public class PlayerController : MonoBehaviour
                 interaction.Advance();
             }
         }
+    }
+
+    public void OpenMenu()
+    {
+        menu.gameObject.SetActive(true);
     }
 
     void FixedUpdate()

@@ -1010,7 +1010,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 298516957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1815416032}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Credits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &298516957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,7 +1678,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 410459852}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1815416032}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: New
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &410459852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3461,7 +3485,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1246385922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1815416032}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1246385922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4479,6 +4515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointer: {fileID: 2800000, guid: 3375a0ea43fe3fb4b83b11b5245fda32, type: 3}
+  continueButton: {fileID: 1864150372}
 --- !u!1001 &1831353562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4745,7 +4782,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1864150375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1815416032}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1864150375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5473,7 +5522,6 @@ GameObject:
   - component: {fileID: 2111105881}
   - component: {fileID: 2111105885}
   - component: {fileID: 2111105884}
-  - component: {fileID: 2111105883}
   - component: {fileID: 2111105882}
   m_Layer: 5
   m_Name: Fade
@@ -5514,29 +5562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a68b420a594194f9f2a005fde1be27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!95 &2111105883
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111105880}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bfd4492efa96cfb4ba2c57f2e0d94d5e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  fadeInOnStart: 1
 --- !u!114 &2111105884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5698,6 +5724,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 1815416030}
     - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
       propertyPath: dialogueCard
       value: 
