@@ -85,12 +85,19 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
         else
         {
             //end dialogue
-            dialogIndex++;
+            if(id > 0)
+            {
+                dialogIndex++;
+            }
+            
             dialogueCard.SetActive(false);
             PlayerController.instance.state = PlayerController.playerState.Exploring;
 
             //save dialogue state?
-            PlayerPrefs.SetInt("Dialog_" + id, dialogIndex);
+            if(id > 0)
+            {
+                PlayerPrefs.SetInt("Dialog_" + id, dialogIndex);
+            }
         }
     }
 

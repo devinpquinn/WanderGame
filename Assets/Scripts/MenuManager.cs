@@ -8,6 +8,9 @@ public class MenuManager : MonoBehaviour
     public Texture2D pointer;
     public GameObject continueButton;
 
+    //intro
+    public Interaction intro;
+
     //singleton
     private static MenuManager _menu;
     public static MenuManager instance { get { return _menu; } }
@@ -65,6 +68,8 @@ public class MenuManager : MonoBehaviour
 
         UnityEvent myEvent = new UnityEvent();
         myEvent.AddListener(CloseMenu);
+        myEvent.AddListener(intro.Interact);
+
         FadeManager.FadeCross(myEvent);
     }
 
