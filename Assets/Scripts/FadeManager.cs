@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FadeManager : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class FadeManager : MonoBehaviour
     //singleton
     private static FadeManager fm;
     public static FadeManager instance { get { return fm; } }
+
+    //events
+    [HideInInspector]
+    public UnityEvent fadeEvent;
 
     private void Awake()
     {
@@ -26,18 +31,31 @@ public class FadeManager : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public static void FadeIn()
+    public static void FadeIn(UnityEvent myEvent = null)
     {
+        instance.fadeEvent = myEvent;
         instance.anim.Play("FadeIn");
     }
 
-    public static void FadeOut()
+    public static void FadeOut(UnityEvent myEvent = null)
     {
+        instance.fadeEvent = myEvent;
         instance.anim.Play("FadeOut");
     }
 
-    public static void FadeCross()
+    public static void FadeCross(UnityEvent myEvent = null)
     {
+        instance.fadeEvent = myEvent;
         instance.anim.Play("FadeCross");
+    }
+
+    public void FadeEvent()
+    {
+        if(fadeEvent != null)
+        {
+            UnityEvent myEvent = fadeEvent;
+            fadeEvent = null;
+            myEvent.Invoke();
+        }
     }
 }
