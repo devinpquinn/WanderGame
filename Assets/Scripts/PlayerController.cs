@@ -113,6 +113,9 @@ public class PlayerController : MonoBehaviour
 
         if(state == playerState.Interacting)
         {
+            //manually zero movement
+            movement = Vector2.zero;
+
             if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && interaction != null)
             {
                 //advance interaction
