@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     private bool enterDoor;
     private bool stopped = true;
 
+    //animation
+    private Animator anim;
+    private SpriteRenderer pawn;
+
     //interaction
     public GameObject dialogueCard;
     public TextMeshProUGUI dialogueText;
@@ -51,6 +55,8 @@ public class PlayerController : MonoBehaviour
         //variable fetching
         state = playerState.Exploring;
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        pawn = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -112,6 +118,16 @@ public class PlayerController : MonoBehaviour
                 //advance interaction
                 interaction.Advance();
             }
+        }
+
+        anim.SetFloat("Speed", movement.sqrMagnitude);
+        if(movement.x > 0)
+        {
+            pawn.flipX = false;
+        }
+        else if(movement.x < 0)
+        {
+            pawn.flipX = true;
         }
     }
 
