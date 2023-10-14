@@ -37,7 +37,8 @@ public class FadeManager : MonoBehaviour
     {
         if (fadeInOnStart)
         {
-            FadeIn();
+            //FadeIn();
+            FadeInIntro();
         }
     }
 
@@ -125,5 +126,18 @@ public class FadeManager : MonoBehaviour
         }
         SetFadeAlpha(0);
         yield return null;
+    }
+
+    private void FadeInIntro()
+    {
+        StopAllCoroutines();
+        StartCoroutine(DoFadeInIntro());
+    }
+
+    IEnumerator DoFadeInIntro()
+    {
+        SetFadeAlpha(1);
+        yield return new WaitForSecondsRealtime(1);
+        StartCoroutine(DoFadeIn());
     }
 }
