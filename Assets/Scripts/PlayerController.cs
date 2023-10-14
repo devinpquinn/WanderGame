@@ -208,19 +208,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetHeight0()
-    {
-        anim.SetInteger("Height", 0);
-    }
-
-    public void SetHeight1()
-    {
-        anim.SetInteger("Height", 1);
-    }
-
-    public void SetHeight2()
-    {
-        anim.SetInteger("Height", 2);
-    }
-
 }
