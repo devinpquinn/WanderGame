@@ -8,6 +8,9 @@ public class MenuManager : MonoBehaviour
     public Texture2D pointer;
     public GameObject continueButton;
 
+    //animation
+    private Animator anim;
+
     //intro
     public Interaction intro;
 
@@ -17,8 +20,22 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        //singleton
+        if (_menu != null && _menu != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _menu = this;
+
+        }
+
         //set cursor
         Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
+
+        //variable fetching
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -59,6 +76,9 @@ public class MenuManager : MonoBehaviour
         UnityEvent myEvent = new UnityEvent();
         myEvent.AddListener(CloseMenu);
         FadeManager.FadeCross(myEvent);
+
+        //animate out
+        anim.Play("Menu_Out");
     }
 
     public void New()
@@ -71,11 +91,14 @@ public class MenuManager : MonoBehaviour
         myEvent.AddListener(intro.Interact);
 
         FadeManager.FadeCross(myEvent);
+
+        //animate out
+        anim.Play("Menu_Out");
     }
 
     public void Credits()
     {
-
+        //animate out when implemented
     }
 
     public void Quit()
@@ -83,5 +106,8 @@ public class MenuManager : MonoBehaviour
         UnityEvent myEvent = new UnityEvent();
         myEvent.AddListener(Application.Quit);
         FadeManager.FadeOut(myEvent);
+
+        //animate out
+        anim.Play("Menu_Out");
     }
 }
