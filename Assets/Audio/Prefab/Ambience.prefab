@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24349940, guid: 6442bf2b5d5734a63bbfbb21945c24d6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2e19cb06cccd742b59d90e29abfe533b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fd20d6be9b146394bb052ee9fe135613, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -571,23 +571,11 @@ MonoBehaviour:
   fadeInDuration: 3
   fadeOutDuration: 3
   melodyArray:
-  - {fileID: 8300000, guid: 4ca70821ffc6845e3ba96efb372412a1, type: 3}
-  - {fileID: 8300000, guid: 63c1f75edc4dd49c8aebbdfd2027a191, type: 3}
-  - {fileID: 8300000, guid: 2e5606ed6737c4dda87f2347216d84b7, type: 3}
-  - {fileID: 8300000, guid: 6ebf5ebc7917d4ac3aca1095bb7ba2fb, type: 3}
-  - {fileID: 8300000, guid: 4b6eda4ff31ed4c328644b89ce58052f, type: 3}
-  - {fileID: 8300000, guid: d3b797361b185457b9d06ffab77addf4, type: 3}
   - {fileID: 8300000, guid: 3b39aacc535994628926bcc8ca2cd1f2, type: 3}
   percArray:
   - {fileID: 8300000, guid: 6b3583fefa82b42ccad8cdc198409427, type: 3}
-  - {fileID: 8300000, guid: eaf214dea0dfa4d5f9376948f0d8be20, type: 3}
-  - {fileID: 8300000, guid: 998feedb796584b5a8d3ff4cf36752c5, type: 3}
-  - {fileID: 8300000, guid: 5914ff224251d4caab3da436fa200a94, type: 3}
-  - {fileID: 8300000, guid: 3c16533663bdf46e889b3f08655c8100, type: 3}
-  - {fileID: 8300000, guid: c21c0990906e94f2683831c8b63eaa39, type: 3}
   fxArray:
   - {fileID: 8300000, guid: bb0992340660d489884820e0f3ab734d, type: 3}
-  - {fileID: 8300000, guid: aa7c42362bd054d4597739690e7971a7, type: 3}
   bpm: 95
   beatsPerBar: 4
   barsPerTrigger: 3
