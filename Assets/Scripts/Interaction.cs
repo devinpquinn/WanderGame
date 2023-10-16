@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using TMPro;
 
 public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
@@ -15,6 +16,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 
     private GameObject dialogueCard;
     private TextMeshProUGUI dialogueText;
+    private RectTransform alignment;
 
     [System.Serializable]
     public class DialogText
@@ -43,6 +45,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
     {
         dialogueCard = PlayerController.instance.dialogueCard;
         dialogueText = PlayerController.instance.dialogueText;
+        alignment = PlayerController.instance.alignment;
 
         //check if loading save state?
         if(PlayerPrefs.HasKey("Dialog_" + id))
@@ -63,6 +66,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             dialogueCard.SetActive(true);
             lineIndex = 0;
             dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
 
             //play event
             if(events.Count > dialogIndex && events[dialogIndex] != null)
@@ -81,6 +85,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
         {
             //continue dialogue
             dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
         }
         else
         {

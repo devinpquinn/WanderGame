@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     //interaction
     public GameObject dialogueCard;
     public TextMeshProUGUI dialogueText;
+    public RectTransform alignment;
     [HideInInspector]
     public Interaction interaction;
 
