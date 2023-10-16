@@ -90,6 +90,7 @@ public class RoomManager : MonoBehaviour
             currentRoom = Instantiate(currentRoom);
             prevRoom = prevRoom = Instantiate(passthroughRoom);
             prevRoom.SetActive(false);
+            prevRoomDirection = null;
             GeneratePassthroughTimer();
         }
         else

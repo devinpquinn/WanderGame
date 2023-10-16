@@ -5775,16 +5775,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7536325521225079198, guid: 6fa6554b008b146d88b6469bdb804e6f, type: 3}
       propertyPath: fxArray.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7536325521225079198, guid: 6fa6554b008b146d88b6469bdb804e6f, type: 3}
       propertyPath: percArray.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7536325521225079198, guid: 6fa6554b008b146d88b6469bdb804e6f, type: 3}
       propertyPath: melodyArray.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7536325521225079198, guid: 6fa6554b008b146d88b6469bdb804e6f, type: 3}
+      propertyPath: melodyArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b39aacc535994628926bcc8ca2cd1f2, type: 3}
+    - target: {fileID: 7536325521228314990, guid: 6fa6554b008b146d88b6469bdb804e6f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fd20d6be9b146394bb052ee9fe135613, type: 3}
     - target: {fileID: 7536325521235878640, guid: 6fa6554b008b146d88b6469bdb804e6f, type: 3}
       propertyPath: m_Name
       value: Ambience
