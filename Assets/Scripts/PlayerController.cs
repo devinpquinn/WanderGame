@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //variable fetching
-        state = playerState.Exploring;
+        state = playerState.Locked;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         pawn = GetComponent<SpriteRenderer>();

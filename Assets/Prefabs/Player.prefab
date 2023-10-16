@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2339b76d696604f961f06630ab31e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  state: 3
   moveSpeed: 2.25
   dialogueCard: {fileID: 0}
   dialogueText: {fileID: 0}

@@ -5749,6 +5749,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1815416030}
     - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
+      propertyPath: state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
       propertyPath: dialogueCard
       value: 
       objectReference: {fileID: 490851202}
