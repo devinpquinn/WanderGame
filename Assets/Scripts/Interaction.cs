@@ -15,6 +15,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
     private int lineIndex = 0;
 
     private GameObject dialogueCard;
+    private Animator anim;
     private TextMeshProUGUI dialogueText;
     private RectTransform alignment;
 
@@ -44,6 +45,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
     private void Start()
     {
         dialogueCard = PlayerController.instance.dialogueCard;
+        anim = dialogueCard.GetComponent<Animator>();
         dialogueText = PlayerController.instance.dialogueText;
         alignment = PlayerController.instance.alignment;
 
@@ -86,6 +88,9 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             //continue dialogue
             dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
             LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
+
+            //animate
+            anim.Play("Dialog_Chew", 0, 0f);
         }
         else
         {
