@@ -9,6 +9,7 @@ public class FadeManager : MonoBehaviour
     private Image fade;
 
     public bool fadeInOnStart = true;
+    public GameObject mainMenu;
     private float fadeTime = 0.5f;
     private Color tempColor;
 
@@ -134,10 +135,24 @@ public class FadeManager : MonoBehaviour
         StartCoroutine(DoFadeInIntro());
     }
 
+    private void ActivateMenu()
+    {
+        mainMenu.SetActive(true);
+    }
+
     IEnumerator DoFadeInIntro()
     {
         SetFadeAlpha(1);
+
+        //set timescale to 0
+        Time.timeScale = 0;
+
+        //show cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         yield return new WaitForSecondsRealtime(1);
+        ActivateMenu();
         StartCoroutine(DoFadeIn());
     }
 }
