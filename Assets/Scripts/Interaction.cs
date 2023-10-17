@@ -75,6 +75,9 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             {
                 events[dialogIndex].Invoke();
             }
+
+            //duck audio
+            RandomMusic.Fade(0.1f, 0.25f);
         }
     }
 
@@ -108,6 +111,9 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             {
                 PlayerPrefs.SetInt("Dialog_" + id, dialogIndex);
             }
+
+            //unduck audio
+            RandomMusic.Fade(0.1f, 1f);
         }
     }
 

@@ -49,6 +49,24 @@ public class RandomMusic : MonoBehaviour
     float triggerTime;
     bool musicPlaying;
 
+    //singleton
+    private static RandomMusic _music;
+    public static RandomMusic instance { get { return _music; } }
+
+    private void Awake()
+    {
+        //singleton
+        if (_music != null && _music != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _music = this;
+
+        }
+    }
+
     void Start()
     {
         triggerTime = 60f / bpm * beatsPerBar * barsPerTrigger;
@@ -146,6 +164,11 @@ public class RandomMusic : MonoBehaviour
         fx.Stop();
         musicPlaying = false;
         StopAllCoroutines();
+    }
+
+    public static void Fade(float duration, float targetVolume)
+    {
+        instance.StartCoroutine(instance.FadeMasterGroup(duration, targetVolume));
     }
 
     IEnumerator FadeMasterGroup(float duration, float targetVolume)
