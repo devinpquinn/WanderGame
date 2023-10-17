@@ -5652,7 +5652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pass Into Night
+  m_text: Title Goes Here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8979e9cd6d3b39f478748557a9c76e74, type: 2}
   m_sharedMaterial: {fileID: 461926336441029924, guid: 8979e9cd6d3b39f478748557a9c76e74, type: 2}
