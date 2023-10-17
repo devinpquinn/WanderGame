@@ -168,6 +168,7 @@ public class RandomMusic : MonoBehaviour
 
     public static void Fade(float duration, float targetVolume)
     {
+        instance.StopAllCoroutines();
         instance.StartCoroutine(instance.FadeMasterGroup(duration, targetVolume));
     }
 

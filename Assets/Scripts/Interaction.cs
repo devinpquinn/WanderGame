@@ -115,6 +115,9 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             //unduck audio
             RandomMusic.Fade(0.1f, 1f);
         }
+
+        //sfx
+        UISounds.Advance();
     }
 
     public void OnBeforeSerialize()
