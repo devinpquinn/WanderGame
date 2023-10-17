@@ -567,7 +567,7 @@ MonoBehaviour:
   perc: {fileID: 7536325521228305640}
   fx: {fileID: 7536325521228328264}
   mixer: {fileID: 24100000, guid: 6442bf2b5d5734a63bbfbb21945c24d6, type: 2}
-  exposedParamName: CaveMasterVol
+  exposedParamName: MasterVol
   fadeInDuration: 3
   fadeOutDuration: 3
   melodyArray:

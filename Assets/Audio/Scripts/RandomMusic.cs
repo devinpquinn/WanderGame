@@ -17,7 +17,7 @@ public class RandomMusic : MonoBehaviour
     [Tooltip("The mixer containing the master volume group.")]
     public AudioMixer mixer;
     [Tooltip("The name of the exposed paramter used to fade the master volume group. Set this to your own exposed paramter if using with a different mixer.")]
-    public string exposedParamName = "CaveMasterVol";
+    public string exposedParamName = "MasterVol";
 
     [Tooltip("Time, in seconds to fade in the music on Start. Set to 0 for immediate playback.")]
     public float fadeInDuration = 3f;

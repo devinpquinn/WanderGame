@@ -128,7 +128,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CaveMusic
+  m_Name: Ambient
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300001}
   m_Snapshots:
@@ -139,7 +139,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: f4535c22f2aa7413d8d4bbf51f165c37
-    name: CaveMasterVol
+    name: MasterVol
   m_AudioMixerGroupViews:
   - guids:
     - 700b7f98ee8f84318b5cfb12bf084e20
