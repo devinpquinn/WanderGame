@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             transform.position = new Vector2(0, -0.5f);
+            pawn.flipX = false;
         }
     }
 
