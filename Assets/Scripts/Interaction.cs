@@ -77,7 +77,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             }
 
             //duck audio
-            RandomMusic.Fade(0.1f, 0.25f);
+            RandomMusic.Fade(0.1f, 0.2f);
         }
     }
 
