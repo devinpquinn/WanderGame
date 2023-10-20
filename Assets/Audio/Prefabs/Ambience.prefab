@@ -580,6 +580,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2a1ae9dc7c38ada4a9c9621a36a52cb1, type: 3}
   - {fileID: 8300000, guid: c76c3b5fa7fc8eb46a41c2e5dfc85513, type: 3}
   - {fileID: 8300000, guid: 55493054b3505434182225d50f630577, type: 3}
+  - {fileID: 8300000, guid: 3dcdde8eb950e2e478610e824bcdcc56, type: 3}
+  - {fileID: 8300000, guid: 1bd0da0605afeb541ac5292a8ca3fabf, type: 3}
+  - {fileID: 8300000, guid: 2ae9d95dc4c87a94b813c5a8de2da858, type: 3}
   fxArray:
   - {fileID: 8300000, guid: a939e377bb3946144af9f447b9a05677, type: 3}
   bpm: 95
