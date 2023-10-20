@@ -11,6 +11,22 @@ PrefabInstance:
       propertyPath: id
       value: 732194912
       objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: repeatLast
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[0]
+      value: '"This line repeats!"'
+      objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: m_RootOrder
       value: 0

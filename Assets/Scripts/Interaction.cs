@@ -9,6 +9,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 {
     public int id = 0; //used to track this interaction for saving/loading
 
+    public bool repeatLast = false;
     public List<DialogText> dialogs;
     public List<UnityEvent> events;
     private int dialogIndex = 0;
@@ -58,7 +59,13 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 
     public void Interact()
     {
-        if(dialogIndex < dialogs.Count)
+        //check if this is a repeat and set index
+        if (repeatLast && dialogIndex >= dialogs.Count)
+        {
+            dialogIndex = dialogs.Count - 1;
+        }
+
+        if (dialogIndex < dialogs.Count)
         {
             //lock player
             PlayerController.instance.state = PlayerController.playerState.Interacting;
