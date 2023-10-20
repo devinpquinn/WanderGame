@@ -573,6 +573,7 @@ MonoBehaviour:
   melodyArray:
   - {fileID: 8300000, guid: 85a3d81315fd3ef4c96c0a614cafea76, type: 3}
   - {fileID: 8300000, guid: 3a2792f895eb2c04c8fad64ffb8b5e1a, type: 3}
+  - {fileID: 8300000, guid: be82cbeab54a253499f383301f6df896, type: 3}
   percArray:
   - {fileID: 8300000, guid: 2a1ae9dc7c38ada4a9c9621a36a52cb1, type: 3}
   - {fileID: 8300000, guid: c76c3b5fa7fc8eb46a41c2e5dfc85513, type: 3}
@@ -583,5 +584,5 @@ MonoBehaviour:
   barsPerTrigger: 3
   melodyChance: 30
   percChance: 20
-  fxChance: 10
+  fxChance: 0
   panVariation: 0.4

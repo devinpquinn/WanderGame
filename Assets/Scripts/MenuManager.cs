@@ -92,6 +92,9 @@ public class MenuManager : MonoBehaviour
 
         FadeManager.FadeCross(myEvent);
 
+        //fade out audio
+        RandomMusic.Fade(0.5f, 0.25f);
+
         //animate out
         anim.Play("Menu_Out");
     }
