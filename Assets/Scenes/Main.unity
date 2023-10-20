@@ -4708,6 +4708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: -1
+  repeatLast: 0
   dialogs:
   - lines:
     - You strayed from the path.

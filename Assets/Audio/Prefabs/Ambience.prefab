@@ -574,9 +574,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 85a3d81315fd3ef4c96c0a614cafea76, type: 3}
   - {fileID: 8300000, guid: 3a2792f895eb2c04c8fad64ffb8b5e1a, type: 3}
   - {fileID: 8300000, guid: be82cbeab54a253499f383301f6df896, type: 3}
+  - {fileID: 8300000, guid: 4a692b0d0274b9f47ac00c6fb25289ce, type: 3}
+  - {fileID: 8300000, guid: 910f5f3c52b49bc479b08c234d61e691, type: 3}
   percArray:
   - {fileID: 8300000, guid: 2a1ae9dc7c38ada4a9c9621a36a52cb1, type: 3}
   - {fileID: 8300000, guid: c76c3b5fa7fc8eb46a41c2e5dfc85513, type: 3}
+  - {fileID: 8300000, guid: 55493054b3505434182225d50f630577, type: 3}
   fxArray:
   - {fileID: 8300000, guid: a939e377bb3946144af9f447b9a05677, type: 3}
   bpm: 95
