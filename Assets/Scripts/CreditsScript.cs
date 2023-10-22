@@ -30,7 +30,7 @@ public class CreditsScript : MonoBehaviour
 
     IEnumerator WaitForStart()
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2f);
         moving = true;
     }
 
@@ -61,7 +61,7 @@ public class CreditsScript : MonoBehaviour
         UnityEvent myEvent = new UnityEvent();
         myEvent.AddListener(Close);
         FadeManager.FadeCross(myEvent);
-        RandomMusic.Fade(1f, 0.25f);
+        RandomMusic.Fade(0.5f, 1f);
     }
 
     public void Close()

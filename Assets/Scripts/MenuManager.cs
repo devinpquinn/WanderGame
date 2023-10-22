@@ -125,5 +125,8 @@ public class MenuManager : MonoBehaviour
 
         //animate out
         anim.Play("Menu_Out");
+
+        //fade out audio
+        RandomMusic.Fade(0.5f, 0f);
     }
 }
