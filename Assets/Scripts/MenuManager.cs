@@ -14,6 +14,9 @@ public class MenuManager : MonoBehaviour
     //intro
     public Interaction intro;
 
+    //credits
+    public GameObject credits;
+
     //singleton
     private static MenuManager _menu;
     public static MenuManager instance { get { return _menu; } }
@@ -101,7 +104,17 @@ public class MenuManager : MonoBehaviour
 
     public void Credits()
     {
-        //animate out when implemented
+        UnityEvent myEvent = new UnityEvent();
+        myEvent.AddListener(OpenCredits);
+        FadeManager.FadeCross(myEvent);
+
+        //fade out audio
+        RandomMusic.Fade(0.5f, 0.25f);
+    }
+
+    public void OpenCredits()
+    {
+        credits.SetActive(true);
     }
 
     public void Quit()
