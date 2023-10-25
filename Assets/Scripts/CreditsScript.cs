@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class CreditsScript : MonoBehaviour
 {
+    public GameObject herald;
     public RectTransform scroll;
     private Vector2 startPos;
     public float scrollSpeed;
@@ -30,7 +31,16 @@ public class CreditsScript : MonoBehaviour
 
     IEnumerator WaitForStart()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        herald.SetActive(true);
+        yield return new WaitForSecondsRealtime(2.5f);
+        UnityEvent myEvent = new UnityEvent();
+        myEvent.AddListener(StartScroll);
+        FadeManager.FadeCross(myEvent);
+    }
+
+    public void StartScroll()
+    {
+        herald.SetActive(false);
         moving = true;
     }
 
