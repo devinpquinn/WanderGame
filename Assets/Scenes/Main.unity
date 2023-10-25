@@ -2439,6 +2439,7 @@ GameObject:
   - component: {fileID: 490851205}
   - component: {fileID: 490851204}
   - component: {fileID: 490851206}
+  - component: {fileID: 490851207}
   m_Layer: 5
   m_Name: Dialogue Card
   m_TagString: Untagged
@@ -2526,6 +2527,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &490851207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490851202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c0c8b677d2800428edbeecbc8bf2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &508113474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2114444009917442348, guid: fe915e1891f438b409b2b36f59f4f408, type: 3}
@@ -3847,7 +3860,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3489202168
+    rgba: 4294508536
   m_fontColor: {r: 0.97321427, g: 1, b: 0.97321427, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7261,6 +7274,11 @@ MonoBehaviour:
   continueButton: {fileID: 1864150372}
   intro: {fileID: 1415315119}
   credits: {fileID: 198916050}
+  lerpers:
+  - {fileID: 757718032}
+  - {fileID: 1201556}
+  - {fileID: 941837284}
+  - {fileID: 1253801582}
 --- !u!95 &1815416033
 Animator:
   serializedVersion: 5

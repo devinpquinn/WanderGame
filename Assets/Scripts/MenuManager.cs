@@ -17,6 +17,9 @@ public class MenuManager : MonoBehaviour
     //credits
     public GameObject credits;
 
+    //text lerpers
+    public List<TextLerper> lerpers;
+
     //singleton
     private static MenuManager _menu;
     public static MenuManager instance { get { return _menu; } }
@@ -82,6 +85,7 @@ public class MenuManager : MonoBehaviour
 
         //animate out
         anim.Play("Menu_Out");
+        CollapseLerpers();
     }
 
     public void New()
@@ -100,6 +104,7 @@ public class MenuManager : MonoBehaviour
 
         //animate out
         anim.Play("Menu_Out");
+        CollapseLerpers();
     }
 
     public void Credits()
@@ -128,5 +133,13 @@ public class MenuManager : MonoBehaviour
 
         //fade out audio
         RandomMusic.Fade(0.5f, 0f);
+    }
+
+    public void CollapseLerpers()
+    {
+        foreach(TextLerper lerper in lerpers)
+        {
+            lerper.CloseOut();
+        }
     }
 }

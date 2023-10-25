@@ -10,16 +10,35 @@ public class TextLerper : MonoBehaviour
     public float maxSize; 
     public float lerpTime = 0.5f;
     private float timer = 0;
+    private bool collapse = false;
 
     private void Awake()
     {
         txt = GetComponent<TextMeshProUGUI>();
     }
 
+    private void OnEnable()
+    {
+        collapse = false;
+    }
+
+    public void CloseOut()
+    {
+        collapse = true;
+        StopAllCoroutines();
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DoLerpDown());
+        }
+    }
+
     public void LerpUp()
     {
-        StopAllCoroutines();
-        StartCoroutine(DoLerpUp());
+        if (!collapse)
+        {
+            StopAllCoroutines();
+            StartCoroutine(DoLerpUp());
+        }
     }
 
     IEnumerator DoLerpUp()
@@ -42,8 +61,11 @@ public class TextLerper : MonoBehaviour
 
     public void LerpDown()
     {
-        StopAllCoroutines();
-        StartCoroutine(DoLerpDown());
+        if (!collapse)
+        {
+            StopAllCoroutines();
+            StartCoroutine(DoLerpDown());
+        }
     }
 
     IEnumerator DoLerpDown()

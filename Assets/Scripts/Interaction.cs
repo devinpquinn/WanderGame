@@ -95,10 +95,6 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
         //get next line of dialogue, check for events or end of interaction
         if (dialogs[dialogIndex].lines.Count > lineIndex)
         {
-            //continue dialogue
-            dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
-
             //animate
             anim.Play("Dialog_Chew", 0, 0f);
         }
@@ -125,6 +121,12 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 
         //sfx
         UISounds.Advance();
+    }
+
+    public void UpdateText()
+    {
+        dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
     }
 
     public void OnBeforeSerialize()
