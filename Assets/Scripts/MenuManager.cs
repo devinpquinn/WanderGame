@@ -88,6 +88,12 @@ public class MenuManager : MonoBehaviour
         CollapseLerpers();
     }
 
+    public void OpenMenu()
+    {
+        anim.Play("Menu_In");
+        ExpandLerpers();
+    }
+
     public void New()
     {
         PlayerPrefs.DeleteAll();
@@ -112,6 +118,10 @@ public class MenuManager : MonoBehaviour
         UnityEvent myEvent = new UnityEvent();
         myEvent.AddListener(OpenCredits);
         FadeManager.FadeCross(myEvent);
+
+        //animate out
+        anim.Play("Menu_Out");
+        CollapseLerpers();
 
         //fade out audio
         RandomMusic.Fade(0.5f, 0.25f);
@@ -140,6 +150,14 @@ public class MenuManager : MonoBehaviour
         foreach(TextLerper lerper in lerpers)
         {
             lerper.CloseOut();
+        }
+    }
+
+    public void ExpandLerpers()
+    {
+        foreach (TextLerper lerper in lerpers)
+        {
+            lerper.EnableAgain();
         }
     }
 }

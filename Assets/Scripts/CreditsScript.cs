@@ -77,5 +77,6 @@ public class CreditsScript : MonoBehaviour
     public void Close()
     {
         gameObject.SetActive(false);
+        MenuManager.instance.OpenMenu();
     }
 }

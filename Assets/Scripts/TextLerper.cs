@@ -32,6 +32,11 @@ public class TextLerper : MonoBehaviour
         }
     }
 
+    public void EnableAgain()
+    {
+        collapse = false;
+    }
+
     public void LerpUp()
     {
         if (!collapse)
