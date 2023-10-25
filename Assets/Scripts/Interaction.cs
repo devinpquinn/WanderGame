@@ -14,6 +14,8 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
     public List<UnityEvent> events;
     private int dialogIndex = 0;
     private int lineIndex = 0;
+    [HideInInspector]
+    public bool advancing = false;
 
     private GameObject dialogueCard;
     private Animator anim;
@@ -59,6 +61,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 
     public void Interact()
     {
+        advancing = false;
         //check if this is a repeat and set index
         if (repeatLast && dialogIndex >= dialogs.Count)
         {
@@ -90,6 +93,12 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 
     public void Advance()
     {
+        if (advancing)
+        {
+            return;
+        }
+
+        advancing = true;
         lineIndex++;
 
         //get next line of dialogue, check for events or end of interaction
