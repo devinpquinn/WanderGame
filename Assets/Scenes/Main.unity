@@ -6664,6 +6664,7 @@ MonoBehaviour:
     - You strayed from the path.
     - Now you are doomed to wander the woods.
   events: []
+  advancing: 0
 --- !u!1001 &1416018279
 PrefabInstance:
   m_ObjectHideFlags: 0

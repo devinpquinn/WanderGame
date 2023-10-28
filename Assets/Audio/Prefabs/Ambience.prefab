@@ -585,10 +585,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2ae9d95dc4c87a94b813c5a8de2da858, type: 3}
   fxArray:
   - {fileID: 8300000, guid: a939e377bb3946144af9f447b9a05677, type: 3}
-  bpm: 95
+  bpm: 60
   beatsPerBar: 4
   barsPerTrigger: 3
-  melodyChance: 30
-  percChance: 20
+  melodyChance: 15
+  percChance: 10
   fxChance: 0
   panVariation: 0.4
