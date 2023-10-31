@@ -9271,6 +9271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInOnStart: 1
+  isFading: 0
   mainMenu: {fileID: 1815416030}
 --- !u!114 &2111105884
 MonoBehaviour:
@@ -9445,6 +9446,10 @@ PrefabInstance:
       propertyPath: alignment
       value: 
       objectReference: {fileID: 714341421}
+    - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
+      propertyPath: moveSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
       propertyPath: dialogueCard
       value: 
