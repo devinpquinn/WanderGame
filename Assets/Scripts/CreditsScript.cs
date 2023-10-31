@@ -33,9 +33,12 @@ public class CreditsScript : MonoBehaviour
     {
         herald.SetActive(true);
         yield return new WaitForSecondsRealtime(2.5f);
-        UnityEvent myEvent = new UnityEvent();
-        myEvent.AddListener(StartScroll);
-        FadeManager.FadeCross(myEvent);
+        if (!FadeManager.instance.isFading)
+        {
+            UnityEvent myEvent = new UnityEvent();
+            myEvent.AddListener(StartScroll);
+            FadeManager.FadeCross(myEvent);
+        }
     }
 
     public void StartScroll()

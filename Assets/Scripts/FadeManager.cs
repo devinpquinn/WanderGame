@@ -9,6 +9,8 @@ public class FadeManager : MonoBehaviour
     private Image fade;
 
     public bool fadeInOnStart = true;
+    [HideInInspector]
+    public bool isFading = false;
     public GameObject mainMenu;
     private float fadeTime = 0.5f;
     private Color tempColor;
@@ -32,6 +34,7 @@ public class FadeManager : MonoBehaviour
 
         fade = GetComponent<Image>();
         tempColor = fade.color;
+        isFading = false;
     }
 
     private void Start()
@@ -41,6 +44,11 @@ public class FadeManager : MonoBehaviour
             //FadeIn();
             FadeInIntro();
         }
+    }
+
+    public float GetFadeAlpha()
+    {
+        return fade.color.a;
     }
 
     public void SetFadeAlpha(float val)
@@ -57,11 +65,17 @@ public class FadeManager : MonoBehaviour
 
     public IEnumerator DoFadeIn(UnityEvent myEvent = null)
     {
+        isFading = true;
         float timer = 0;
-        SetFadeAlpha(1);
+        //SetFadeAlpha(1);
+        float startVal = GetFadeAlpha();
+        if(startVal < 1)
+        {
+            timer = fadeTime * (1 - startVal);
+        }
         while (timer < fadeTime)
         {
-            SetFadeAlpha(Mathf.Lerp(1, 0, (timer / fadeTime)));
+            SetFadeAlpha(Mathf.Lerp(startVal, 0, (timer / fadeTime)));
             timer += Time.unscaledDeltaTime;
             yield return new WaitForEndOfFrame();
         }
@@ -70,6 +84,7 @@ public class FadeManager : MonoBehaviour
         {
             myEvent.Invoke();
         }
+        isFading = false;
         yield return null;
     }
 
@@ -81,11 +96,17 @@ public class FadeManager : MonoBehaviour
 
     public IEnumerator DoFadeOut(UnityEvent myEvent = null)
     {
+        isFading = true;
         float timer = 0;
-        SetFadeAlpha(0);
+        //SetFadeAlpha(0);
+        float startVal = GetFadeAlpha();
+        if(startVal > 0)
+        {
+            timer = fadeTime - (fadeTime * startVal);
+        }
         while (timer < fadeTime)
         {
-            SetFadeAlpha(Mathf.Lerp(0, 1, (timer / fadeTime)));
+            SetFadeAlpha(Mathf.Lerp(startVal, 1, (timer / fadeTime)));
             timer += Time.unscaledDeltaTime;
             yield return new WaitForEndOfFrame();
         }
@@ -94,6 +115,7 @@ public class FadeManager : MonoBehaviour
         {
             myEvent.Invoke();
         }
+        isFading = false;
         yield return null;
     }
 
@@ -105,11 +127,17 @@ public class FadeManager : MonoBehaviour
 
     public IEnumerator DoFadeCross(UnityEvent myEvent = null)
     {
+        isFading = true;
         float timer = 0;
-        SetFadeAlpha(0);
+        //SetFadeAlpha(0);
+        float startVal = GetFadeAlpha();
+        if(startVal > 0)
+        {
+            timer = fadeTime - (fadeTime * startVal);
+        }
         while (timer < fadeTime)
         {
-            SetFadeAlpha(Mathf.Lerp(0, 1, (timer / fadeTime)));
+            SetFadeAlpha(Mathf.Lerp(startVal, 1, (timer / fadeTime)));
             timer += Time.unscaledDeltaTime;
             yield return new WaitForEndOfFrame();
         }
@@ -126,6 +154,7 @@ public class FadeManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         SetFadeAlpha(0);
+        isFading = false;
         yield return null;
     }
 
