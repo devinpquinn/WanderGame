@@ -197,7 +197,7 @@ public class RandomMusic : MonoBehaviour
                 mixer.SetFloat(diegeticParamName, Mathf.Log10(newVol) * 20);
                 yield return null;
             }
-            mixer.SetFloat(exposedParamName, Mathf.Log10(targetValue) * 20);
+            mixer.SetFloat(diegeticParamName, Mathf.Log10(targetValue) * 20);
         }
         else
         {
