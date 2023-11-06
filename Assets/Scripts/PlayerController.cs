@@ -161,12 +161,14 @@ public class PlayerController : MonoBehaviour
             state = playerState.Crossing;
             enterDoor = true;
             FadeManager.FadeOut();
+            RandomMusic.Fade(0.5f, 0, true);
         }
         else
         {
             //exiting door
             enterDoor = false;
             FadeManager.FadeIn();
+            RandomMusic.Fade(0.5f, 1, true);
         }
         movement = vector;
     }

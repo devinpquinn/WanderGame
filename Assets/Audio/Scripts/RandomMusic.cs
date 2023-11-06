@@ -18,6 +18,7 @@ public class RandomMusic : MonoBehaviour
     public AudioMixer mixer;
     [Tooltip("The name of the exposed paramter used to fade the master volume group. Set this to your own exposed paramter if using with a different mixer.")]
     public string exposedParamName = "MasterVol";
+    public string diegeticParamName = "DiegeticVol";
 
     [Tooltip("Time, in seconds to fade in the music on Start. Set to 0 for immediate playback.")]
     public float fadeInDuration = 3f;
@@ -166,28 +167,50 @@ public class RandomMusic : MonoBehaviour
         StopAllCoroutines();
     }
 
-    public static void Fade(float duration, float targetVolume)
+    public static void Fade(float duration, float targetVolume, bool diegetic = false)
     {
         instance.StopAllCoroutines();
-        instance.StartCoroutine(instance.FadeMasterGroup(duration, targetVolume));
+        instance.StartCoroutine(instance.FadeMasterGroup(duration, targetVolume, diegetic));
     }
 
-    IEnumerator FadeMasterGroup(float duration, float targetVolume)
+    IEnumerator FadeMasterGroup(float duration, float targetVolume, bool diegetic = false)
     {
         float currentTime = 0;
         float currentVol;
-        mixer.GetFloat(exposedParamName, out currentVol);
+        if (diegetic)
+        {
+            mixer.GetFloat(diegeticParamName, out currentVol);
+        }
+        else
+        {
+            mixer.GetFloat(exposedParamName, out currentVol);
+        }
         currentVol = Mathf.Pow(10, currentVol / 20);
         float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
 
-        while (currentTime < duration)
+        if (diegetic)
         {
-            currentTime += Time.unscaledDeltaTime;
-            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
-            mixer.SetFloat(exposedParamName, Mathf.Log10(newVol) * 20);
-            yield return null;
+            while (currentTime < duration)
+            {
+                currentTime += Time.unscaledDeltaTime;
+                float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+                mixer.SetFloat(diegeticParamName, Mathf.Log10(newVol) * 20);
+                yield return null;
+            }
+            mixer.SetFloat(exposedParamName, Mathf.Log10(targetValue) * 20);
         }
-        mixer.SetFloat(exposedParamName, Mathf.Log10(targetValue) * 20);
+        else
+        {
+            while (currentTime < duration)
+            {
+                currentTime += Time.unscaledDeltaTime;
+                float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+                mixer.SetFloat(exposedParamName, Mathf.Log10(newVol) * 20);
+                yield return null;
+            }
+            mixer.SetFloat(exposedParamName, Mathf.Log10(targetValue) * 20);
+        }
+        
         yield break;
     }
 }
