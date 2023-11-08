@@ -11,7 +11,7 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
 
     public bool repeatLast = false;
     public List<DialogText> dialogs;
-    public List<UnityEvent> events;
+    public List<DialogEvent> events;
     private int dialogIndex = 0;
     private int lineIndex = 0;
     [HideInInspector]
@@ -29,6 +29,19 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
         public List<string> lines; //the text blocks that make up this event
 
         public DialogText()
+        {
+
+        }
+    }
+
+    [System.Serializable]
+    public class DialogEvent
+    {
+        public int index = 0;
+        public bool onEnd = false;
+        public UnityEvent trigger;
+
+        public DialogEvent()
         {
 
         }
@@ -80,10 +93,13 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
             LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
 
-            //play event
-            if(events.Count > dialogIndex && events[dialogIndex] != null)
+            //play start event
+            foreach(DialogEvent ev in events)
             {
-                events[dialogIndex].Invoke();
+                if(ev.index == dialogIndex && !ev.onEnd)
+                {
+                    ev.trigger.Invoke();
+                }
             }
 
             //duck audio
@@ -122,6 +138,15 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             if(id > 0)
             {
                 PlayerPrefs.SetInt("Dialog_" + id, dialogIndex);
+            }
+
+            //play end event
+            foreach (DialogEvent ev in events)
+            {
+                if (ev.index == dialogIndex - 1 && ev.onEnd)
+                {
+                    ev.trigger.Invoke();
+                }
             }
 
             //unduck audio
