@@ -86,6 +86,8 @@ public class SleepyHandler : MonoBehaviour
 
     IEnumerator CountIn()
     {
+        PlayerController.instance.state = PlayerController.playerState.Exploring;
+
         RandomMusic.Fade(5f, 1);
 
         SetFadeAlpha(1);
@@ -100,7 +102,5 @@ public class SleepyHandler : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         SetFadeAlpha(0);
-
-        PlayerController.instance.state = PlayerController.playerState.Exploring;
     }
 }

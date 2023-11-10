@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 577940945
-  doors: 
+  doors: NW
 --- !u!1 &2459974025039158627
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,11 +272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: m_LocalPosition.z
