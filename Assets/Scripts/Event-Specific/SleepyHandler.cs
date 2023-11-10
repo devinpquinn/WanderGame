@@ -39,7 +39,6 @@ public class SleepyHandler : MonoBehaviour
     public void StartSleepTimer()
     {
         StartCoroutine(Countdown());
-        speaker.Play();
     }
 
     IEnumerator Countdown()
@@ -49,6 +48,11 @@ public class SleepyHandler : MonoBehaviour
         faderCanvas.sortingLayerName = "UI";
         faderCanvas.sortingOrder = -1;
 
+        yield return new WaitForSeconds(10);
+
+        speaker.Play();
+        RandomMusic.Fade(timer, 0);
+
         float timerStart = timer;
         while(timer > 0)
         {
@@ -56,6 +60,7 @@ public class SleepyHandler : MonoBehaviour
             SetFadeAlpha(Mathf.Lerp(1, 0, timer / timerStart));
             yield return new WaitForEndOfFrame();
         }
+        SetFadeAlpha(1);
         EndSleepTimer();
     }
 

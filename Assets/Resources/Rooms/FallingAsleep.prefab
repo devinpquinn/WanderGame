@@ -269,7 +269,7 @@ MonoBehaviour:
   endingEvent: {fileID: 3859070442652904559}
   before: {fileID: 5607897158547486852}
   fader: {fileID: 6620853488437126138}
-  timer: 69
+  timer: 66
 --- !u!82 &445344107976503420
 AudioSource:
   m_ObjectHideFlags: 0
