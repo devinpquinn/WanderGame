@@ -2067,7 +2067,7 @@ AudioSource:
   m_GameObject: {fileID: 356907425}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e2c3e4476514c4f42954aa8109696cfa, type: 2}
+  OutputAudioMixerGroup: {fileID: 29704187782810261, guid: e2c3e4476514c4f42954aa8109696cfa, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
@@ -3757,7 +3757,7 @@ AudioSource:
   m_GameObject: {fileID: 715043094}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e2c3e4476514c4f42954aa8109696cfa, type: 2}
+  OutputAudioMixerGroup: {fileID: 29704187782810261, guid: e2c3e4476514c4f42954aa8109696cfa, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.75
@@ -8733,6 +8733,10 @@ PrefabInstance:
       propertyPath: menu
       value: 
       objectReference: {fileID: 1815416030}
+    - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: e2c3e4476514c4f42954aa8109696cfa, type: 2}
     - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
       propertyPath: alignment
       value: 

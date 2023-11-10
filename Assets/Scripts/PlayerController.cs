@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class PlayerController : MonoBehaviour
 
     //menu
     public GameObject menu;
+
+    //audio
+    public AudioMixer mixer;
 
     //singleton
     private static PlayerController _player;
@@ -161,14 +165,14 @@ public class PlayerController : MonoBehaviour
             state = playerState.Crossing;
             enterDoor = true;
             FadeManager.FadeOut();
-            RandomMusic.Fade(0.5f, 0, true);
+            StartCoroutine(FadeNonDiegetic(0.5f, 0));
         }
         else
         {
             //exiting door
             enterDoor = false;
             FadeManager.FadeIn();
-            RandomMusic.Fade(0.5f, 1, true);
+            StartCoroutine(FadeNonDiegetic(0.5f, 1));
         }
         movement = vector;
     }
@@ -211,6 +215,26 @@ public class PlayerController : MonoBehaviour
         {
             state = playerState.Exploring;
         }
+    }
+
+    IEnumerator FadeNonDiegetic(float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float currentVol;
+        mixer.GetFloat("NonDiegeticVol", out currentVol);
+        currentVol = Mathf.Pow(10, currentVol / 20);
+        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.unscaledDeltaTime;
+            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+            mixer.SetFloat("NonDiegeticVol", Mathf.Log10(newVol) * 20);
+            yield return null;
+        }
+        mixer.SetFloat("NonDiegeticVol", Mathf.Log10(targetValue) * 20);
+
+        yield break;
     }
 
 }
