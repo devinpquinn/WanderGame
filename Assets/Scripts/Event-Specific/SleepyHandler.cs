@@ -8,12 +8,12 @@ public class SleepyHandler : MonoBehaviour
     public SpriteRenderer guy;
     public Sprite guyAsleep;
     public AudioSource speaker;
-    public GameObject endingEvent;
     public Interaction before;
     public Image fader;
     private Color tempColor;
 
     public float timer;
+    public float endTime;
     private bool wasEnabled = false;
 
     private void Awake()
@@ -61,6 +61,14 @@ public class SleepyHandler : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         SetFadeAlpha(1);
+
+        PlayerController.instance.state = PlayerController.playerState.Locked;
+        timer = endTime - timerStart;
+        while(timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
         EndSleepTimer();
     }
 
@@ -73,8 +81,26 @@ public class SleepyHandler : MonoBehaviour
     //trigger the end event
     public void EndSleepTimer()
     {
-        endingEvent.SetActive(true);
+        StartCoroutine(CountIn());
     }
 
-    
+    IEnumerator CountIn()
+    {
+        RandomMusic.Fade(5f, 1);
+
+        SetFadeAlpha(1);
+        guy.sprite = guyAsleep;
+
+        float timer = 0;
+        float goal = 5f;
+        while (timer < goal)
+        {
+            SetFadeAlpha(Mathf.Lerp(1, 0, timer / goal));
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        SetFadeAlpha(0);
+
+        PlayerController.instance.state = PlayerController.playerState.Exploring;
+    }
 }
