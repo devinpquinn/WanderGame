@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000268, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000269, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: m_Name
       value: Interactable
