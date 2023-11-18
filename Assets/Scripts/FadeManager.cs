@@ -71,7 +71,7 @@ public class FadeManager : MonoBehaviour
         float startVal = GetFadeAlpha();
         if(startVal < 1)
         {
-            timer = fadeTime * (1 - startVal);
+            //timer = fadeTime * (1 - startVal);
         }
         while (timer < fadeTime)
         {
@@ -102,7 +102,7 @@ public class FadeManager : MonoBehaviour
         float startVal = GetFadeAlpha();
         if(startVal > 0)
         {
-            timer = fadeTime - (fadeTime * startVal);
+            //timer = fadeTime - (fadeTime * startVal);
         }
         while (timer < fadeTime)
         {
