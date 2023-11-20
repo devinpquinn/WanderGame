@@ -128,7 +128,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.25}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
 --- !u!114 &4476952189876000264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,8 +146,5 @@ MonoBehaviour:
   dialogs:
   - lines:
     - '"Stick to the path, no matter the cost."'
-    - '"Stray from the path, and you will be lost."'
-  - lines:
-    - '"I have spoken."'
   events: []
   advancing: 0
