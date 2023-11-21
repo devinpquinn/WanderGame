@@ -684,6 +684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blocker15
       objectReference: {fileID: 0}
+    - target: {fileID: 2114444009917442345, guid: fe915e1891f438b409b2b36f59f4f408, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2114444009917442348, guid: fe915e1891f438b409b2b36f59f4f408, type: 3}
       propertyPath: m_RootOrder
       value: 12
