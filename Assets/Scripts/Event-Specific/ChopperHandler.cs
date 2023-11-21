@@ -5,10 +5,21 @@ using UnityEngine;
 public class ChopperHandler : MonoBehaviour
 {
     public Animator treeAnim;
-    public AudioClip chopSound;
+    public List<AudioClip> ChopSounds;
+    private int lastIndex = -1;
 
-    private Animator myAnim;
     private AudioSource src;
+
+    private void Awake()
+    {
+        src = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        BlockerManager.SetupBlockers("NES");
+        RoomManager.instance.currentRoom.GetComponent<Room>().doors = "NES";
+    }
 
     private void OnEnable()
     {
@@ -28,18 +39,12 @@ public class ChopperHandler : MonoBehaviour
     public void ShakeTree()
     {
         treeAnim.Play("ChoppedTree_Shake");
-        //src.PlayOneShot(chopSound);
-    }
 
-    public void SwitchState(bool chopping)
-    {
-        if (chopping)
+        int index = Random.Range(0, ChopSounds.Count);
+        while (index == lastIndex)
         {
-            myAnim.Play("Chopper_Chop");
+            index = Random.Range(0, ChopSounds.Count);
         }
-        else
-        {
-            myAnim.Play("Chopper_Idle");
-        }
+        src.PlayOneShot(ChopSounds[index]);
     }
 }
