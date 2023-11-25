@@ -156,8 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[3]
-      value: '"Not me, though. I repeat it to myself with each breath. Draw it in,
-        and sigh it out."'
+      value: '"But I know mine. I remember the sound and the taste of it."'
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[4]
