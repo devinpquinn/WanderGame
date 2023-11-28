@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7677592960741677018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7677592960741677019}
+  m_Layer: 0
+  m_Name: Interactables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7677592960741677019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677592960741677018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6803270803290449506}
+  m_Father: {fileID: 7677592961093140567}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7677592961093140565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7677592961093140567}
+  - component: {fileID: 7677592961093140566}
+  m_Layer: 0
+  m_Name: Lover A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7677592961093140567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677592961093140565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7677592961646181195}
+  - {fileID: 7677592960741677019}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7677592961093140566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677592961093140565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca5e35375c64654a93fcd95c2ebd477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 121639305
+  doors: NE
+--- !u!1 &7677592961646181194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7677592961646181195}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7677592961646181195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677592961646181194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7677592961093140567}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6938717217686990955
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7677592960741677019}
+    m_Modifications:
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: id
+      value: 644166170
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[1].lines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[0]
+      value: '"Please, have yo<color=#040622>u seen my other</color> hal<color=#040622>f?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[1]
+      value: '"We had nearl<color=#040622>y made it out</color> together... We co<color=#040622>uld
+        see the light</color> of day throu<color=#040622>gh the trees."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[2]
+      value: '"Suddenly, a terr<color=#040622>ible force split us</color> apa<color=#040622>rt."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[3]
+      value: '"I searched des<color=#040622>perately-- but I</color> fear that each
+        ne<color=#040622>w step may only</color> increase the dist<color=#040622>ance
+        between us."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[4]
+      value: '"If you see my <color=#040622>other half, I beg</color> that you pa<color=#040622>ss
+        along my</color> mess<color=#040622>age..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[5]
+      value: '"We will find eac<color=#040622>h other somehow,</color> my love, and
+        n<color=#040622>othing can ever</color> divide u<color=#040622>s again."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[0].lines.Array.data[6]
+      value: '"I have not left you, my love, I remain here waiting...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[1].lines.Array.data[0]
+      value: '"One day I shall be by your side."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[1].lines.Array.data[1]
+      value: '"We had nearly made it out together... We could see the light of day
+        through the trees."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[1].lines.Array.data[2]
+      value: '"Suddenly, a terrible force split us apart."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[1].lines.Array.data[3]
+      value: '"I searched desperately-- but I fear that each new step may only increase
+        the distance between us."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: dialogs.Array.data[1].lines.Array.data[4]
+      value: '"If you see my other half, I beg that you pass along my love, and the
+        surety that we will be together again, somehow."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000269, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_Name
+      value: Lover_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476952189876000270, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 05e8b1173b8bb154fa991f32bd18a42c, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+--- !u!4 &6803270803290449506 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
+  m_PrefabInstance: {fileID: 6938717217686990955}
+  m_PrefabAsset: {fileID: 0}
