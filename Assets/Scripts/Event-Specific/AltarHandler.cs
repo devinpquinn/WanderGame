@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class AltarHandler : MonoBehaviour
 {
-    string altarText = "The glowing inscription reads: ";
+    string altarText;
     public Interaction i;
 
     public void SetInscription()
     {
-        string toAdd = "Test";
+        altarText = "The glowing inscription reads:\n\n";
+        string toAdd = "Null";
 
-        altarText += toAdd;
-        i.dialogs[0].lines[1] = altarText;
+        try
+        {
+            toAdd = "\"O " + System.Environment.UserName.ToUpper();
+        }
+        finally
+        {
+            toAdd += "\n\n CARRY US\"";
+            altarText += toAdd;
+            i.dialogs[0].lines[1] = altarText;
+        }
     }
 }
