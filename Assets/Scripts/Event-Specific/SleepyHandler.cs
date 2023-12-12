@@ -7,6 +7,7 @@ public class SleepyHandler : MonoBehaviour
 {
     public SpriteRenderer guy;
     public Sprite guyAsleep;
+    public GameObject flower;
     public AudioSource speaker;
     public Interaction before;
     public Image fader;
@@ -28,10 +29,16 @@ public class SleepyHandler : MonoBehaviour
         {
             guy.sprite = guyAsleep;
             SetFadeAlpha(0);
+
+            if (PlayerPrefs.HasKey("Data_WaitedSleepy"))
+            {
+                flower.SetActive(true);
+            }
         }
         else
         {
             wasEnabled = true;
+            flower.SetActive(false);
         }
     }
 
@@ -92,6 +99,8 @@ public class SleepyHandler : MonoBehaviour
 
         SetFadeAlpha(1);
         guy.sprite = guyAsleep;
+        flower.SetActive(true);
+        PlayerPrefs.SetInt("Data_WaitedSleepy", 1);
 
         float timer = 0;
         float goal = 5f;
