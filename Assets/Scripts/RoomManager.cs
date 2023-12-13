@@ -10,6 +10,11 @@ public class RoomManager : MonoBehaviour
     [SerializeField]
     private string prevRoomDirection;
 
+    [HideInInspector]
+    public bool reachedEnding = false;
+    public bool reachedEndingPlusOne = false;
+    public AudioSource endingSource;
+
     //passthrough
     public GameObject passthroughRoom;
     private int passthroughTimer = 0;
@@ -93,6 +98,16 @@ public class RoomManager : MonoBehaviour
             prevRoom.SetActive(false);
             prevRoomDirection = null;
             GeneratePassthroughTimer();
+
+            //fresh start after completing game
+            if (reachedEnding)
+            {
+                reachedEnding = false;
+                reachedEndingPlusOne = false;
+
+                //fade out ending song
+                StartCoroutine(EndEndingSong());
+            }
         }
         else
         {
@@ -184,10 +199,22 @@ public class RoomManager : MonoBehaviour
                 }
                 if (!validRooms)
                 {
-                    //do something here to conclude the game; maybe just exit to menu when that exists
-                    Debug.Log("OUT OF ROOMS!");
+                    //couldn't find a valid entrance to a remaining room
+                    instance.passthroughTimer = 0;
                     instance.prevRoom = instance.currentRoom;
                     instance.currentRoom = instance.passthroughRoom;
+
+                    //if there are no rooms left period, start playing an ending cue song
+                    if(instance.roomsAvailable.Count < 1 && !instance.reachedEnding)
+                    {
+                        instance.reachedEnding = true;
+                    }
+                    else if (instance.reachedEnding && !instance.reachedEndingPlusOne)
+                    {
+                        instance.reachedEndingPlusOne = true;
+                        instance.StartCoroutine(instance.StartEndingSong());
+                        instance.passthroughTimer = 999;
+                    }
                 }
                 else
                 {
@@ -278,5 +305,28 @@ public class RoomManager : MonoBehaviour
         int key = Random.Range(0, passthroughString.Length);
         int timer = int.Parse(passthroughString.Substring(key, 1));
         passthroughTimer = timer;
+    }
+
+    IEnumerator StartEndingSong()
+    {
+        yield return new WaitForSeconds(10);
+        if (reachedEndingPlusOne)
+        {
+            endingSource.volume = 0.25f;
+            endingSource.Play();
+        }
+    }
+
+    IEnumerator EndEndingSong()
+    {
+        float startVolume = endingSource.volume;
+        float timer = 0;
+        while(endingSource.volume > 0.01f)
+        {
+            endingSource.volume = Mathf.Lerp(startVolume, 0, timer / 1);
+            timer += Time.unscaledDeltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        endingSource.volume = 0;
     }
 }
