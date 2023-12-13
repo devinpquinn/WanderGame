@@ -9,16 +9,16 @@ public class AltarHandler : MonoBehaviour
 
     public void SetInscription()
     {
-        altarText = "The glowing inscription reads:\n\n";
+        altarText = "The glowing inscription reads:\n\n<smallcaps>";
         string toAdd = "Null";
 
         try
         {
-            toAdd = "\"O " + System.Environment.UserName.ToUpper();
+            toAdd = "\"o " + System.Environment.UserName.ToLower();
         }
         finally
         {
-            toAdd += "\n\n CARRY US\"";
+            toAdd += "\n\n carry us\"";
             altarText += toAdd;
             i.dialogs[0].lines[1] = altarText;
         }
