@@ -14,6 +14,7 @@ public class RoomManager : MonoBehaviour
     public bool reachedEnding = false;
     public bool reachedEndingPlusOne = false;
     public AudioSource endingSource;
+    public GameObject endingSplash;
 
     //passthrough
     public GameObject passthroughRoom;
@@ -154,6 +155,7 @@ public class RoomManager : MonoBehaviour
 
     public static void NewRoom(string enterFrom)
     {
+        instance.endingSplash.SetActive(false);
         //are we returning to the previous room?
         bool returning = false;
         if(instance.prevRoomDirection != null)
@@ -309,16 +311,18 @@ public class RoomManager : MonoBehaviour
 
     IEnumerator StartEndingSong()
     {
-        yield return new WaitForSeconds(10);
+        endingSplash.SetActive(true);
         if (reachedEndingPlusOne)
         {
-            endingSource.volume = 0.25f;
+            endingSource.volume = 0.5f;
             endingSource.Play();
         }
+        yield return null;
     }
 
     IEnumerator EndEndingSong()
     {
+        endingSplash.SetActive(false);
         float startVolume = endingSource.volume;
         float timer = 0;
         while(endingSource.volume > 0.01f)
