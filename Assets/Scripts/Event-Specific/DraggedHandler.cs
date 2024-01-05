@@ -28,7 +28,6 @@ public class DraggedHandler : MonoBehaviour
     public void StartDrag()
     {
         dragging = true;
-        GetComponent<AudioSource>().Play();
     }
 
     private void Update()
