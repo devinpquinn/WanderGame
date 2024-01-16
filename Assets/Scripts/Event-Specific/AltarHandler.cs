@@ -18,7 +18,7 @@ public class AltarHandler : MonoBehaviour
         }
         finally
         {
-            toAdd += "\n\n carry us\"";
+            toAdd += "\n\n preserve us\"";
             altarText += toAdd;
             i.dialogs[0].lines[1] = altarText;
         }
