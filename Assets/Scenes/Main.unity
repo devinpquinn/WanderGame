@@ -895,7 +895,7 @@ MonoBehaviour:
   herald: {fileID: 354564892}
   scroll: {fileID: 1984614569}
   scrollSpeed: 1
-  maxPos: 2100
+  maxPos: 2150
 --- !u!1 &208886774
 GameObject:
   m_ObjectHideFlags: 0
@@ -5604,7 +5604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -1916.96}
+  m_AnchoredPosition: {x: 640, y: -1975.01}
   m_SizeDelta: {x: 640, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349472277
@@ -5686,7 +5686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -2129.69}
+  m_AnchoredPosition: {x: 640, y: -2187.74}
   m_SizeDelta: {x: 1254.01, y: 54.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362981523
@@ -7809,7 +7809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -2049.58}
+  m_AnchoredPosition: {x: 640, y: -2107.6301}
   m_SizeDelta: {x: 1254.01, y: 41.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959552752
@@ -8327,8 +8327,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -1313.085}
-  m_SizeDelta: {x: 1254.01, y: 983.75}
+  m_AnchoredPosition: {x: 640, y: -1342.1101}
+  m_SizeDelta: {x: 1254.01, y: 1041.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037237621
 MonoBehaviour:
@@ -8389,6 +8389,8 @@ MonoBehaviour:
     lwdickens
 
     matt_beer
+
+    nomiqbomi
 
     Percy
     Duke

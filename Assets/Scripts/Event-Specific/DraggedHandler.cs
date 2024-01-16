@@ -13,10 +13,11 @@ public class DraggedHandler : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         if (PlayerPrefs.HasKey("Data_Dragged"))
         {
+            GetComponent<AudioSource>().enabled = false;
             gameObject.SetActive(false);
         }
         else
@@ -30,11 +31,11 @@ public class DraggedHandler : MonoBehaviour
         dragging = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (dragging)
         {
-            rb.MovePosition(rb.position + Vector2.right * speed * Time.deltaTime);
+            rb.MovePosition(rb.position + Vector2.right * speed * Time.fixedDeltaTime);
         }
     }
 }
