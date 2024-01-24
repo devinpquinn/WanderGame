@@ -188,24 +188,60 @@ public class PlayerController : MonoBehaviour
                 //top -> bottom
                 transform.position = new Vector2(transform.position.x, -6.1f);
                 dir = "S";
+
+                if (PlayerPrefs.HasKey("Data_DoorsUp"))
+                {
+                    PlayerPrefs.SetInt("Data_DoorsUp", PlayerPrefs.GetInt("Data_DoorsUp" + 1));
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("Data_DoorsUp", 1);
+                }
             }
             else if(movement.x > 0 && movement.y == 0)
             {
                 //right -> left
                 transform.position = new Vector2(-6.5f, transform.position.y);
                 dir = "W";
+
+                if (PlayerPrefs.HasKey("Data_DoorsRight"))
+                {
+                    PlayerPrefs.SetInt("Data_DoorsRight", PlayerPrefs.GetInt("Data_DoorsRight" + 1));
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("Data_DoorsRight", 1);
+                }
             }
             else if(movement.x == 0 && movement.y < 0)
             {
                 //bottom -> top
                 transform.position = new Vector2(transform.position.x, 5.1f);
                 dir = "N";
+
+                if (PlayerPrefs.HasKey("Data_DoorsDown"))
+                {
+                    PlayerPrefs.SetInt("Data_DoorsDown", PlayerPrefs.GetInt("Data_DoorsDown" + 1));
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("Data_DoorsDown", 1);
+                }
             }
             else
             {
                 //left -> right
                 transform.position = new Vector2(6.5f, transform.position.y);
                 dir = "E";
+
+                if (PlayerPrefs.HasKey("Data_DoorsLeft"))
+                {
+                    PlayerPrefs.SetInt("Data_DoorsLeft", PlayerPrefs.GetInt("Data_DoorsLeft" + 1));
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("Data_DoorsLeft", 1);
+                }
             }
 
             //spawn new room or retrieve previous one
