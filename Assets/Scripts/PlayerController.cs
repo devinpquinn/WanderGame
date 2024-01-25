@@ -191,7 +191,7 @@ public class PlayerController : MonoBehaviour
 
                 if (PlayerPrefs.HasKey("Data_DoorsUp"))
                 {
-                    PlayerPrefs.SetInt("Data_DoorsUp", PlayerPrefs.GetInt("Data_DoorsUp" + 1));
+                    PlayerPrefs.SetInt("Data_DoorsUp", PlayerPrefs.GetInt("Data_DoorsUp") + 1);
                 }
                 else
                 {
@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
 
                 if (PlayerPrefs.HasKey("Data_DoorsRight"))
                 {
-                    PlayerPrefs.SetInt("Data_DoorsRight", PlayerPrefs.GetInt("Data_DoorsRight" + 1));
+                    PlayerPrefs.SetInt("Data_DoorsRight", PlayerPrefs.GetInt("Data_DoorsRight") + 1);
                 }
                 else
                 {
@@ -221,7 +221,7 @@ public class PlayerController : MonoBehaviour
 
                 if (PlayerPrefs.HasKey("Data_DoorsDown"))
                 {
-                    PlayerPrefs.SetInt("Data_DoorsDown", PlayerPrefs.GetInt("Data_DoorsDown" + 1));
+                    PlayerPrefs.SetInt("Data_DoorsDown", PlayerPrefs.GetInt("Data_DoorsDown") + 1);
                 }
                 else
                 {
@@ -236,7 +236,7 @@ public class PlayerController : MonoBehaviour
 
                 if (PlayerPrefs.HasKey("Data_DoorsLeft"))
                 {
-                    PlayerPrefs.SetInt("Data_DoorsLeft", PlayerPrefs.GetInt("Data_DoorsLeft" + 1));
+                    PlayerPrefs.SetInt("Data_DoorsLeft", PlayerPrefs.GetInt("Data_DoorsLeft") + 1);
                 }
                 else
                 {
