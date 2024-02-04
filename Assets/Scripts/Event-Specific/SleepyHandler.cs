@@ -15,7 +15,6 @@ public class SleepyHandler : MonoBehaviour
 
     public float timer;
     public float endTime;
-    private bool wasEnabled = false;
 
     private void Awake()
     {
@@ -25,26 +24,24 @@ public class SleepyHandler : MonoBehaviour
     //if the player is returning to this room, set the guy to asleep
     private void OnEnable()
     {
-        if (wasEnabled || PlayerPrefs.HasKey("Dialog_" + before.id))
+        flower.SetActive(false);
+        if (PlayerPrefs.HasKey("Data_StartedSleepy"))
         {
             guy.sprite = guyAsleep;
             SetFadeAlpha(0);
+            before.gameObject.GetComponent<CircleCollider2D>().enabled = false;
 
             if (PlayerPrefs.HasKey("Data_WaitedSleepy"))
             {
                 flower.SetActive(true);
             }
         }
-        else
-        {
-            wasEnabled = true;
-            flower.SetActive(false);
-        }
     }
 
     //start the sleepy timer and music
     public void StartSleepTimer()
     {
+        PlayerPrefs.SetInt("Data_StartedSleepy", 1);
         StartCoroutine(Countdown());
     }
 
