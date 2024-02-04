@@ -136,35 +136,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[0]
-      value: <color=#040622>"Please, have yo</color>u seen my other<color=#040622>>
+      value: <color=#210404>"Please, have yo</color>u seen my other<color=#210404>>
         hal</color>f?"
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[1]
-      value: <color=#040622>"We had nearl</color>y made it out<color=#040622> together...
-        We co</color>uld see the light<color=#040622> of day throu</color>gh the
+      value: <color=#210404>"We had nearl</color>y made it out<color=#210404> together...
+        We co</color>uld see the light<color=#210404> of day throu</color>gh the
         trees."
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[2]
-      value: <color=#040622>"Suddenly, a terr</color>ible force split us<color=#040622>
+      value: <color=#210404>"Suddenly, a terr</color>ible force split us<color=#210404>
         apa</color>rt."
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[3]
-      value: <color=#040622>"I searched des</color>perately-- but I<color=#040622>
-        fear that each ne</color>w step may only<color=#040622> increase the dist</color>ance
+      value: <color=#210404>"I searched des</color>perately-- but I<color=#210404>
+        fear that each ne</color>w step may only<color=#210404> increase the dist</color>ance
         between us."
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[4]
-      value: <color=#040622>"If you see my </color>other half, I beg<color=#040622>
-        that you pa</color>ss along my<color=#040622> mess</color>age..."
+      value: <color=#210404>"If you see my </color>other half, I beg<color=#210404>
+        that you pa</color>ss along my<color=#210404> mess</color>age..."
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[5]
-      value: <color=#040622>"We will find eac</color>h other somehow,<color=#040622>
-        my love, and n</color>othing can ever<color=#040622> divide u</color>s again."
+      value: <color=#210404>"We will find eac</color>h other somehow,<color=#210404>
+        my love, and n</color>othing can ever<color=#210404> divide u</color>s again."
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[6]
