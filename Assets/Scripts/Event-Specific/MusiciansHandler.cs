@@ -35,5 +35,11 @@ public class MusiciansHandler : MonoBehaviour
         flute.Play("Flute_Tap");
         yield return new WaitForSeconds(14f);
         flute.Play("Flute_Play");
+        yield return new WaitForSeconds(14f);
+        flute.Play("Flute_Idle");
+        yield return new WaitForSeconds(0.5f);
+        strings.Play("Strings_Idle");
+        yield return new WaitForSeconds(0.5f);
+        drums.Play("Drums_Idle");
     }
 }
