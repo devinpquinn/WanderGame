@@ -17,6 +17,12 @@ public class MusiciansHandler : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(LoopPerformance());
+    }
+
+    IEnumerator LoopPerformance()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
         StartCoroutine(Perform());
     }
 
@@ -24,22 +30,24 @@ public class MusiciansHandler : MonoBehaviour
     {
         yield return new WaitUntil(() => PlayerController.instance.state == PlayerController.playerState.Exploring);
         src.Play();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSecondsRealtime(0.3f);
         flute.Play("Flute_Play");
         strings.Play("Strings_Bob");
-        yield return new WaitForSeconds(6.5f);
+        yield return new WaitForSecondsRealtime(6.5f);
         drums.Play("Drums_Play");
-        yield return new WaitForSeconds(14.7f);
+        yield return new WaitForSecondsRealtime(14.7f);
         strings.Play("Strings_Play");
-        yield return new WaitForSeconds(14.5f);
+        yield return new WaitForSecondsRealtime(14.5f);
         flute.Play("Flute_Tap");
-        yield return new WaitForSeconds(14f);
+        yield return new WaitForSecondsRealtime(14f);
         flute.Play("Flute_Play");
-        yield return new WaitForSeconds(14f);
+        yield return new WaitForSecondsRealtime(14f);
         flute.Play("Flute_Idle");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         strings.Play("Strings_Idle");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         drums.Play("Drums_Idle");
+        yield return new WaitForSecondsRealtime(10f);
+        StartCoroutine(LoopPerformance());
     }
 }
