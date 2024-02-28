@@ -61,6 +61,14 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && continueButton.activeInHierarchy)
+        {
+            Continue();
+        }
+    }
+
     public void CloseMenu()
     {
         PlayerController.instance.state = PlayerController.playerState.Exploring;
