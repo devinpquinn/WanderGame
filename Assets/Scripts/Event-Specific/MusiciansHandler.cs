@@ -17,7 +17,7 @@ public class MusiciansHandler : MonoBehaviour
         src = GetComponent<AudioSource>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(LoopPerformance());
     }

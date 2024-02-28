@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
     public GameObject menu;
 
     //audio
-    public AudioMixer mixer;
+    public AudioMixer nonDiegetic;
+    public AudioMixer diegetic;
 
     //singleton
     private static PlayerController _player;
@@ -166,6 +167,7 @@ public class PlayerController : MonoBehaviour
             enterDoor = true;
             FadeManager.FadeOut();
             StartCoroutine(FadeNonDiegetic(0.5f, 0));
+            StartCoroutine(FadeDiegetic(0.5f, 0));
         }
         else
         {
@@ -173,6 +175,7 @@ public class PlayerController : MonoBehaviour
             enterDoor = false;
             FadeManager.FadeIn();
             StartCoroutine(FadeNonDiegetic(0.5f, 1));
+            StartCoroutine(FadeDiegetic(0.5f, 1));
         }
         movement = vector;
     }
@@ -257,7 +260,7 @@ public class PlayerController : MonoBehaviour
     {
         float currentTime = 0;
         float currentVol;
-        mixer.GetFloat("NonDiegeticVol", out currentVol);
+        nonDiegetic.GetFloat("NonDiegeticVol", out currentVol);
         currentVol = Mathf.Pow(10, currentVol / 20);
         float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
 
@@ -265,10 +268,30 @@ public class PlayerController : MonoBehaviour
         {
             currentTime += Time.unscaledDeltaTime;
             float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
-            mixer.SetFloat("NonDiegeticVol", Mathf.Log10(newVol) * 20);
+            nonDiegetic.SetFloat("NonDiegeticVol", Mathf.Log10(newVol) * 20);
             yield return null;
         }
-        mixer.SetFloat("NonDiegeticVol", Mathf.Log10(targetValue) * 20);
+        nonDiegetic.SetFloat("NonDiegeticVol", Mathf.Log10(targetValue) * 20);
+
+        yield break;
+    }
+
+    IEnumerator FadeDiegetic(float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float currentVol;
+        diegetic.GetFloat("DiegeticVol", out currentVol);
+        currentVol = Mathf.Pow(10, currentVol / 20);
+        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.unscaledDeltaTime;
+            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+            diegetic.SetFloat("DiegeticVol", Mathf.Log10(newVol) * 20);
+            yield return null;
+        }
+        diegetic.SetFloat("DiegeticVol", Mathf.Log10(targetValue) * 20);
 
         yield break;
     }
