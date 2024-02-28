@@ -22,6 +22,11 @@ public class MusiciansHandler : MonoBehaviour
         StartCoroutine(LoopPerformance());
     }
 
+    private void OnDisable()
+    {
+        PlayerController.instance.GetComponent<Animator>().SetBool("Funky", false);
+    }
+
     public void MessageDancers(int index)
     {
         foreach(DancerHandler d in dancers)
@@ -57,6 +62,8 @@ public class MusiciansHandler : MonoBehaviour
 
         strings.Play("Strings_Play");
 
+        PlayerController.instance.GetComponent<Animator>().SetBool("Funky", true);
+
         yield return new WaitForSecondsRealtime(14.5f);
 
         flute.Play("Flute_Tap");
@@ -74,6 +81,8 @@ public class MusiciansHandler : MonoBehaviour
         strings.Play("Strings_Idle");
 
         MessageDancers(0);
+
+        PlayerController.instance.GetComponent<Animator>().SetBool("Funky", false);
 
         yield return new WaitForSecondsRealtime(0.5f);
 
