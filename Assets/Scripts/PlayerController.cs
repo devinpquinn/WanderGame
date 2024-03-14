@@ -168,6 +168,12 @@ public class PlayerController : MonoBehaviour
             FadeManager.FadeOut();
             StartCoroutine(FadeNonDiegetic(0.5f, 0));
             StartCoroutine(FadeDiegetic(0.5f, 0));
+
+            //trigger vine if applicable
+            if (FindObjectOfType<VineHandler>())
+            {
+                FindObjectOfType<VineHandler>().Crawl();
+            }
         }
         else
         {
