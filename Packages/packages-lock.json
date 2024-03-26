@@ -272,6 +272,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "www.nulltale.oldmoviefx": {
+      "version": "https://github.com/NullTale/OldMovieFx.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "14.0.6"
+      },
+      "hash": "d233eb1fa5dba03a457c6cab9e88455621b83ae1"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
