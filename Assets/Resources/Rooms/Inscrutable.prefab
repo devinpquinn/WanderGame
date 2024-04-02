@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5351596359545524541}
+  - component: {fileID: 4184424173110125390}
   m_Layer: 0
   m_Name: Interactables
   m_TagString: Untagged
@@ -111,6 +112,20 @@ Transform:
   - {fileID: 5178122786946016758}
   m_Father: {fileID: 5351596359194445489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4184424173110125390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351596359545524540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158ad411bbca5a14c8b7037bce2a93a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 5178122786946016753}
+  handDown: {fileID: 21300000, guid: c3055ff5119ecaa46a82d73749e4d6c7, type: 3}
 --- !u!1001 &8790243030305256447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,31 +217,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: events.Array.data[0].trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: events.Array.data[0].trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5178122786946016753}
+      objectReference: {fileID: 4184424173110125390}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: events.Array.data[0].trigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: events.Array.data[0].trigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_sprite
+      value: HandDown
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: events.Array.data[0].trigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.SpriteRenderer, UnityEngine
+      value: InscrutableHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: events.Array.data[0].trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 21300000, guid: c3055ff5119ecaa46a82d73749e4d6c7, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: events.Array.data[0].trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Sprite, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: m_RootOrder
