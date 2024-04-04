@@ -12,7 +12,7 @@ public class GuardsHandler : MonoBehaviour
 
     private List<string> entry = new List<string> { "entry", "admittance", "passage", "further" };
     private List<string> title = new List<string> { "Her Benevolence", "Her Worshipfulness", "Her Graciousness", "Her Beneficence", "Her Magnificence" };
-    private List<string> bestow = new List<string> { "accepting", "hosting", "welcoming", "bestowing her favors upon", "blessing", "offering her time to" };
+    private List<string> bestow = new List<string> { "accepting", "hosting", "welcoming", "bestowing her favors upon", "blessing", "offering her attention to" };
     private List<string> guest = new List<string> { "supplicants", "petitioners", "admirers", "vagrants", "guests", "stray dogs", "travelers" };
     private List<string> time = new List<string> { "at this time", "currently", "right now", "for the time being" };
 
