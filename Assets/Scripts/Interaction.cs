@@ -87,12 +87,6 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
             PlayerController.instance.state = PlayerController.playerState.Interacting;
             PlayerController.instance.interaction = this;
 
-            //start playing text
-            dialogueCard.SetActive(true);
-            lineIndex = 0;
-            dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
-
             //play start event
             foreach(DialogEvent ev in events)
             {
@@ -101,6 +95,12 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
                     ev.trigger.Invoke();
                 }
             }
+
+            //start playing text
+            dialogueCard.SetActive(true);
+            lineIndex = 0;
+            dialogueText.SetText(dialogs[dialogIndex].lines[lineIndex]);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(alignment);
 
             //duck audio
             RandomMusic.Fade(0.1f, 0.25f);
