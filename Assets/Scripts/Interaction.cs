@@ -107,6 +107,36 @@ public class Interaction : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
 
+    public void ForceEnd()
+    {
+        //end dialogue
+        if (id > 0)
+        {
+            dialogIndex++;
+        }
+
+        dialogueCard.SetActive(false);
+        PlayerController.instance.state = PlayerController.playerState.Exploring;
+
+        //save dialogue state?
+        if (id > 0)
+        {
+            PlayerPrefs.SetInt("Dialog_" + id, dialogIndex);
+        }
+
+        //play end event
+        foreach (DialogEvent ev in events)
+        {
+            if (ev.index == dialogIndex - 1 && ev.onEnd)
+            {
+                ev.trigger.Invoke();
+            }
+        }
+
+        //unduck audio
+        RandomMusic.Fade(0.1f, 1f);
+    }
+
     public void Advance()
     {
         if (advancing)
