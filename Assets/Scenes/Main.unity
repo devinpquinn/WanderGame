@@ -912,7 +912,7 @@ MonoBehaviour:
   herald: {fileID: 354564892}
   scroll: {fileID: 1984614569}
   scrollSpeed: 1
-  maxPos: 2560
+  maxPos: 2735
 --- !u!1 &208886774
 GameObject:
   m_ObjectHideFlags: 0
@@ -9017,8 +9017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -2075.5698}
-  m_SizeDelta: {x: 1254.01, y: 1099.84}
+  m_AnchoredPosition: {x: 640, y: -2162.645}
+  m_SizeDelta: {x: 1254.01, y: 1273.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037237621
 MonoBehaviour:
@@ -9068,13 +9068,19 @@ MonoBehaviour:
 
     Fission9
 
+    Garuda1982
+
     howebzar
+
+    ihitokage
 
     iwanPlays
 
     kayceemixer
 
     kyles
+
+    LamaMakesMusic
 
     lwdickens
 
