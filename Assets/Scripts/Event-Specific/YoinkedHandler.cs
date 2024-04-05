@@ -19,7 +19,9 @@ public class YoinkedHandler : MonoBehaviour
 
     IEnumerator DoCountdown()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.8f);
+        GetComponent<AudioSource>().enabled = true;
+        yield return new WaitForSeconds(.2f);
         PlayerController.instance.interaction.ForceEnd();
         Yoink();
     }
