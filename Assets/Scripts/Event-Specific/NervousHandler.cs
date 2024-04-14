@@ -13,7 +13,7 @@ public class NervousHandler : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         Jitter();
     }
