@@ -29,37 +29,47 @@ public class BlockerManager : MonoBehaviour
 
     public static void SetupBlockers(string key)
     {
-        if (key.ToLower().Contains("n"))
+        if(key == "TREE")
         {
             instance.blockerN.SetActive(false);
-        }
-        else
-        {
-            instance.blockerN.SetActive(true);
-        }
-        if (key.ToLower().Contains("e"))
-        {
             instance.blockerE.SetActive(false);
-        }
-        else
-        {
-            instance.blockerE.SetActive(true);
-        }
-        if (key.ToLower().Contains("s"))
-        {
             instance.blockerS.SetActive(false);
-        }
-        else
-        {
-            instance.blockerS.SetActive(true);
-        }
-        if (key.ToLower().Contains("w"))
-        {
             instance.blockerW.SetActive(false);
         }
         else
         {
-            instance.blockerW.SetActive(true);
+            if (key.ToLower().Contains("n"))
+            {
+                instance.blockerN.SetActive(false);
+            }
+            else
+            {
+                instance.blockerN.SetActive(true);
+            }
+            if (key.ToLower().Contains("e"))
+            {
+                instance.blockerE.SetActive(false);
+            }
+            else
+            {
+                instance.blockerE.SetActive(true);
+            }
+            if (key.ToLower().Contains("s"))
+            {
+                instance.blockerS.SetActive(false);
+            }
+            else
+            {
+                instance.blockerS.SetActive(true);
+            }
+            if (key.ToLower().Contains("w"))
+            {
+                instance.blockerW.SetActive(false);
+            }
+            else
+            {
+                instance.blockerW.SetActive(true);
+            }
         }
     }
 }

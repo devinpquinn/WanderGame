@@ -11,6 +11,9 @@ public class BizarroHandler : MonoBehaviour
         player = GameObject.Find("Player");
         player.GetComponent<SpriteRenderer>().enabled = false;
         GameObject.Find("Persistent Environment/Blockers/Perimeter").SetActive(false);
+
+        GameObject.Find("Persistent Environment/Blockers/Block N").SetActive(false);
+        GameObject.Find("Persistent Environment/Blockers/Block W").SetActive(false);
     }
 
     private void FixedUpdate()
