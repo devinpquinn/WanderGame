@@ -9790,6 +9790,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5565225133180108193, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5565225133180108204, guid: 28ca5f5ab2ded854db31f75d2a4678ed, type: 3}
       propertyPath: menu
       value: 
