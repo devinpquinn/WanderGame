@@ -29,9 +29,10 @@ public class Bird : MonoBehaviour
             StartCoroutine(StaggerBirds());
         }
     }
-
     IEnumerator StaggerBirds()
     {
+        GetComponent<AudioSource>().Play();
+
         foreach(GameObject b in birds)
         {
             b.SetActive(false);
