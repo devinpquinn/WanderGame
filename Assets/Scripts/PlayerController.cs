@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     //movement
     private Rigidbody2D rb;
     public float moveSpeed = 2.5f;
-    Vector2 movement;
+    [HideInInspector]
+    public Vector2 movement;
     private bool enterDoor;
     private bool stopped = true;
 

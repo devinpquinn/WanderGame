@@ -36,10 +36,13 @@ public class DryadHandler : MonoBehaviour
         anim.Play("Dryad_Transform");
         PlayerController.instance.state = PlayerController.playerState.Locked;
         PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        PlayerController.instance.movement = Vector2.zero;
         PlayerController.instance.gameObject.GetComponent<Animator>().Play("Player_Transform");
 
         PlayerPrefs.SetFloat("Data_Dryad_X", PlayerController.instance.transform.position.x);
         PlayerPrefs.SetFloat("Data_Dryad_Y", PlayerController.instance.transform.position.y);
+
+        GetComponent<AudioSource>().Play();
     }
 
     public void EndTransform()
