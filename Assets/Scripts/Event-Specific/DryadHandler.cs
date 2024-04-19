@@ -53,6 +53,8 @@ public class DryadHandler : MonoBehaviour
         transform.position = playerLocation;
         PlayerController.instance.transform.position = treeLocation;
         PlayerController.instance.state = PlayerController.playerState.Exploring;
+        PlayerController.instance.gameObject.GetComponent<Animator>().enabled = false;
+        PlayerController.instance.gameObject.GetComponent<Animator>().enabled = true;
         PlayerController.instance.gameObject.GetComponent<Animator>().Play("Player_Idle");
         anim.Play("Dryad_Tree");
     }
