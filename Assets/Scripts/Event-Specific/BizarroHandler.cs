@@ -14,6 +14,8 @@ public class BizarroHandler : MonoBehaviour
 
         GameObject.Find("Persistent Environment/Blockers/Block N").SetActive(false);
         GameObject.Find("Persistent Environment/Blockers/Block W").SetActive(false);
+
+        player.GetComponent<AudioSource>().enabled = false;
     }
 
     private void FixedUpdate()
@@ -25,11 +27,15 @@ public class BizarroHandler : MonoBehaviour
     {
         player.GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find("Persistent Environment/Blockers/Perimeter").SetActive(true);
+
+        player.GetComponent<AudioSource>().enabled = true;
     }
 
     private void OnDestroy()
     {
         player.GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find("Persistent Environment/Blockers/Perimeter").SetActive(true);
+
+        player.GetComponent<AudioSource>().enabled = true;
     }
 }
