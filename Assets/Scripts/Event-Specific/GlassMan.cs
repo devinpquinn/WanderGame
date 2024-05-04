@@ -21,7 +21,7 @@ public class GlassMan : MonoBehaviour
             shattered = true;
             rend.enabled = false;
 
-            ps.Emit(180);
+            ps.Emit(240);
         }
     }
 }
