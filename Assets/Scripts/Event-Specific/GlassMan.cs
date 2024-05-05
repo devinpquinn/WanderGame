@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlassMan : MonoBehaviour
+public class GlassMan : MonoBehaviour, ISerializationCallbackReceiver
 {
     private SpriteRenderer rend;
     private ParticleSystem ps;
@@ -40,5 +40,18 @@ public class GlassMan : MonoBehaviour
 
             PlayerPrefs.SetInt("Data_Shattered_" + id, 1);
         }
+    }
+
+    public void OnBeforeSerialize()
+    {
+        if (id == 0)
+        {
+            id = Random.Range(100000000, 999999999);
+        }
+    }
+
+    public void OnAfterDeserialize()
+    {
+        //has to be implemented
     }
 }
