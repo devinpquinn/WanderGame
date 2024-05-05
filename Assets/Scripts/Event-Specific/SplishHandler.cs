@@ -6,7 +6,7 @@ public class SplishHandler : MonoBehaviour
 {
     private void Awake()
     {
-        GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
+        GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.1f);
         StartCoroutine(DestroyAfterTime());
     }
 
