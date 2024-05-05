@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4481433130857423352}
   - component: {fileID: 5731181189723605427}
+  - component: {fileID: 5226329941636555696}
   m_Layer: 0
   m_Name: SplishSound
   m_TagString: Untagged
@@ -42,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6868768639578389840, guid: 6442bf2b5d5734a63bbfbb21945c24d6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2c7459e08042b8d47be895e26b8deb1a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0ffacc915bed1474bbe9a3b9f5efb733, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -128,3 +129,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5226329941636555696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227517120439114795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd3778f002b19443b9e9bb1f88cc95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
