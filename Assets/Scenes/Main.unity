@@ -18066,6 +18066,7 @@ GameObject:
   - component: {fileID: 1909893653}
   - component: {fileID: 1909893652}
   - component: {fileID: 1909893651}
+  - component: {fileID: 1909893654}
   m_Layer: 0
   m_Name: Drips
   m_TagString: Untagged
@@ -21912,7 +21913,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -22895,6 +22896,19 @@ Transform:
   - {fileID: 469539754}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1909893654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909893650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ccb29eeb28e2249b0653f9557beeb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 5227517120439114795, guid: 9b405ae86a8721e468637579785917e9, type: 3}
 --- !u!1 &1944578735
 GameObject:
   m_ObjectHideFlags: 0
