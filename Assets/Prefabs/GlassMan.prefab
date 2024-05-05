@@ -249,8 +249,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.2
-      minScalar: 0.4
+      scalar: 1.6
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1186,7 +1186,7 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.6037232
+          time: 0.7410218
           value: 1
           inSlope: -0
           outSlope: -1.2617444
@@ -1197,8 +1197,8 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: -2.5234888
-          outSlope: -2.5234888
+          inSlope: -3.861329
+          outSlope: -3.861329
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -1524,7 +1524,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 42598
+        atime0: 49151
         atime1: 65535
         atime2: 0
         atime3: 0
@@ -5043,7 +5043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72cf359b1c1c6744baee82e4b29726f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 178796377
 --- !u!82 &1971874838196476048
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5054,7 +5054,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6868768639578389840, guid: 6442bf2b5d5734a63bbfbb21945c24d6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0ccd905ab5d6b994da4d40c2342ca03f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ddde9421593cefd4089008a76cb56429, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
