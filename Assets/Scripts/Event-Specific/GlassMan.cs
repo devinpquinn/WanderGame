@@ -35,7 +35,7 @@ public class GlassMan : MonoBehaviour, ISerializationCallbackReceiver
 
             ps.Emit(240);
 
-            src.pitch = Random.Range(0.9f, 1.1f);
+            src.pitch = Random.Range(0.8f, 1.2f);
             src.Play();
 
             PlayerPrefs.SetInt("Data_Shattered_" + id, 1);
