@@ -14,6 +14,14 @@ public class VineHandler : MonoBehaviour
         src = GetComponent<AudioSource>();
     }
 
+    private void OnEnable()
+    {
+        if (PlayerPrefs.HasKey("Data_Vine"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     public void Crawl()
     {
         if (!PlayerPrefs.HasKey("Data_Vine"))
