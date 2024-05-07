@@ -88,6 +88,14 @@ public class RoomManager : MonoBehaviour
                 //set prev room direction
                 prevRoomDirection = PlayerPrefs.GetString("PrevRoomDirection");
             }
+            else
+            {
+                //reset rooms with randomly generated doors
+                if (thisRoom.GetComponent<Room>().doors.Contains("*"))
+                {
+                    thisRoom.GetComponent<Room>().doors = "";
+                }
+            }
         }
 
         if (!loadingSave)
@@ -280,7 +288,7 @@ public class RoomManager : MonoBehaviour
 
     public static string RandomDoors(string entry)
     {
-        string theseDoors = "";
+        string theseDoors = "*";
         if(entry.Contains("N") || Random.Range(0, 2) > 0)
         {
             theseDoors += "N";
