@@ -787,9 +787,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChopSounds:
-  - {fileID: 8300000, guid: 75cdcebc1eec67f4e829ed729ec6593d, type: 3}
-  - {fileID: 8300000, guid: 757ac9cb91675924f97b30031473c102, type: 3}
-  - {fileID: 8300000, guid: 01b71c7da787ee54881f70dd3f8adeea, type: 3}
+  - {fileID: 8300000, guid: 54862989b13fea64a87a35e151025115, type: 3}
+  - {fileID: 8300000, guid: be14bae92e3f0114ebc2e02331e602ab, type: 3}
+  - {fileID: 8300000, guid: e3e25189930eefc42816762d6d1579cf, type: 3}
   bloodOrigin: {fileID: 1940280974}
   ps: {fileID: 4500396666072824032, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
 --- !u!82 &181628115
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   herald: {fileID: 354564892}
   scroll: {fileID: 1984614569}
   scrollSpeed: 1
-  maxPos: 2980
+  maxPos: 3022
 --- !u!1 &208886774
 GameObject:
   m_ObjectHideFlags: 0
@@ -8628,8 +8628,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2128540467}
+  m_Children: []
   m_Father: {fileID: 181628119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949835941
@@ -9403,8 +9402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -2278.74}
-  m_SizeDelta: {x: 1254.01, y: 1506.18}
+  m_AnchoredPosition: {x: 640, y: -2307.765}
+  m_SizeDelta: {x: 1254.01, y: 1564.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037237621
 MonoBehaviour:
@@ -9482,6 +9481,8 @@ MonoBehaviour:
 
     Percy
     Duke
+
+    Podsburgh
 
     Profispiesser
 
@@ -9823,11 +9824,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2114444009917442348, guid: fe915e1891f438b409b2b36f59f4f408, type: 3}
   m_PrefabInstance: {fileID: 1777805296}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2128540467 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-  m_PrefabInstance: {fileID: 7585166422129806613}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2133484950 stripped
 Transform:
@@ -10299,67 +10295,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fa6554b008b146d88b6469bdb804e6f, type: 3}
---- !u!1001 &7585166422129806613
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1940280974}
-    m_Modifications:
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464085345355505898, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500396666072824032, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_Name
-      value: ChoppedBlood
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500396666072824032, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 89818a4d2ee3ff246a0b158f0dc98864, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
