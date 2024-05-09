@@ -113,7 +113,11 @@ public class PlayerController : MonoBehaviour
             //check for menu input
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                state = playerState.Locked;
+                if(state != playerState.Crossing)
+                {
+                    state = playerState.Locked;
+                }
+                
                 UnityEvent myEvent = new UnityEvent();
                 myEvent.AddListener(OpenMenu);
                 FadeManager.FadeCross(myEvent);
@@ -180,7 +184,12 @@ public class PlayerController : MonoBehaviour
         {
             //exiting door
             enterDoor = false;
-            FadeManager.FadeIn();
+
+            if (!menu.activeInHierarchy)
+            {
+                FadeManager.FadeIn();
+            }
+
             StartCoroutine(FadeNonDiegetic(0.5f, 1));
             StartCoroutine(FadeDiegetic(0.5f, 1));
         }
@@ -252,6 +261,18 @@ public class PlayerController : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("Data_DoorsLeft", 1);
                 }
+            }
+
+            if (RoomManager.instance.endingSplash.activeInHierarchy)
+            {
+                StartCoroutine(FadeNonDiegetic(0.5f, 1));
+
+                Time.timeScale = 0;
+
+                UnityEvent myEvent = new UnityEvent();
+                myEvent.AddListener(OpenMenu);
+                myEvent.AddListener(MenuManager.instance.OpenCredits);
+                FadeManager.FadeCross(myEvent);
             }
 
             //spawn new room or retrieve previous one

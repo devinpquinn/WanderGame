@@ -71,7 +71,11 @@ public class MenuManager : MonoBehaviour
 
     public void CloseMenu()
     {
-        PlayerController.instance.state = PlayerController.playerState.Exploring;
+        if(PlayerController.instance.state == PlayerController.playerState.Locked)
+        {
+            PlayerController.instance.state = PlayerController.playerState.Exploring;
+        }
+        
         gameObject.SetActive(false);
     }
 
@@ -87,6 +91,11 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
+        if(PlayerController.instance.state == PlayerController.playerState.Crossing)
+        {
+            Time.timeScale = 1;
+        }
+
         UnityEvent myEvent = new UnityEvent();
         myEvent.AddListener(CloseMenu);
         FadeManager.FadeCross(myEvent);
