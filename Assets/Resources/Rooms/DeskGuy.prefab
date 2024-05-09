@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[2]
-      value: '"Won''t get you any closer to the Path, though! But keep at it if you
+      value: '"Won''t get you any closer to the path, though! But keep at it if you
         like."'
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
