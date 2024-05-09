@@ -25,6 +25,6 @@ public class ChoppedHandler : MonoBehaviour
         }
         src.PlayOneShot(ChopSounds[index]);
 
-        Instantiate(ps, bloodOrigin.transform.position, Quaternion.identity);
+        Instantiate(ps, bloodOrigin.transform.position, Quaternion.identity, bloodOrigin);
     }
 }
