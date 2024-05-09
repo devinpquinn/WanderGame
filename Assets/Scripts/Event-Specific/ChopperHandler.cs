@@ -15,27 +15,6 @@ public class ChopperHandler : MonoBehaviour
         src = GetComponent<AudioSource>();
     }
 
-    private void Start()
-    {
-        BlockerManager.SetupBlockers("NES");
-        RoomManager.instance.currentRoom.GetComponent<Room>().doors = "NES";
-    }
-
-    private void OnEnable()
-    {
-        GameObject.Find("Persistent Environment/Blockers/Perimeter/Blocker15").SetActive(false);
-    }
-
-    private void OnDisable()
-    {
-        GameObject.Find("Persistent Environment/Blockers/Perimeter/Blocker15").SetActive(true);
-    }
-
-    private void OnDestroy()
-    {
-        GameObject.Find("Persistent Environment/Blockers/Perimeter/Blocker15").SetActive(true);
-    }
-
     public void ShakeTree()
     {
         treeAnim.Play("ChoppedTree_Shake");

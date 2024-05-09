@@ -18,7 +18,8 @@ public class RoomManager : MonoBehaviour
 
     //passthrough
     public GameObject passthroughRoom;
-    private int passthroughTimer = 0;
+    [HideInInspector]
+    public int passthroughTimer = 0;
     private string passthroughString = "0011112223";
     //private string passthroughString = "0";
 
