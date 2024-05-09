@@ -142,12 +142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[0]
-      value: '"Maybe I''m dead... maybe it''s all a dream... yes, I''m cleaving to
-        the heart of the matter."'
+      value: '"It''s simple-- this is all just a dream."'
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[1]
-      value: '"One way or another, it''s all about me in the end."'
+      value: '"Which, of course, means it must be <i>my</i> dream."'
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000265, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: m_RootOrder
