@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca5e35375c64654a93fcd95c2ebd477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 10101010
+  id: 154550575
   doors: NS
 --- !u!114 &2960328064780720917
 MonoBehaviour:

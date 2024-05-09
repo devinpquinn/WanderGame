@@ -13,15 +13,14 @@ public class ChopsHandler : MonoBehaviour
         RoomManager.instance.currentRoom.GetComponent<Room>().doors = "NES";
 
         //determine if this is the first or second clearing
-        if((PlayerPrefs.HasKey("Room_101010101") && GetComponent<Room>().id != 101010101) || (PlayerPrefs.HasKey("Room_010101010") && GetComponent<Room>().id != 010101010))
+        if(PlayerPrefs.HasKey("Data_Chopping") && PlayerPrefs.GetInt("Data_Chopping") != GetComponent<Room>().id)
         {
-            chopper.SetActive(false);
             chopped.SetActive(true);
         }
         else
         {
+            PlayerPrefs.SetInt("Data_Chopping", GetComponent<Room>().id);
             chopper.SetActive(true);
-            chopped.SetActive(false);
         }
     }
 
@@ -31,11 +30,6 @@ public class ChopsHandler : MonoBehaviour
     }
 
     private void OnDisable()
-    {
-        GameObject.Find("Persistent Environment/Blockers/Perimeter/Blocker15").SetActive(true);
-    }
-
-    private void OnDestroy()
     {
         GameObject.Find("Persistent Environment/Blockers/Perimeter/Blocker15").SetActive(true);
     }
