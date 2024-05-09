@@ -8,6 +8,9 @@ public class ChoppedHandler : MonoBehaviour
     private int lastIndex = -1;
     private AudioSource src;
 
+    public Transform bloodOrigin;
+    public GameObject ps;
+
     private void Awake()
     {
         src = GetComponent<AudioSource>();
@@ -21,5 +24,7 @@ public class ChoppedHandler : MonoBehaviour
             index = Random.Range(0, ChopSounds.Count);
         }
         src.PlayOneShot(ChopSounds[index]);
+
+        Instantiate(ps, bloodOrigin.transform.position, Quaternion.identity);
     }
 }
