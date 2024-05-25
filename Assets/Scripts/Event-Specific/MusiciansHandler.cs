@@ -44,41 +44,41 @@ public class MusiciansHandler : MonoBehaviour
     IEnumerator Perform()
     {
         yield return new WaitUntil(() => PlayerController.instance.state == PlayerController.playerState.Exploring);
-        src.Play();
+        //src.Play();
         yield return new WaitForSecondsRealtime(0.3f);
 
-        flute.Play("Flute_Play");
-        strings.Play("Strings_Bob");
+        //flute.Play("Flute_Play");
+        //strings.Play("Strings_Bob");
 
         MessageDancers(1);
 
         yield return new WaitForSecondsRealtime(6.5f);
 
-        drums.Play("Drums_Play");
+        //drums.Play("Drums_Play");
 
         MessageDancers(2);
 
         yield return new WaitForSecondsRealtime(14.7f);
 
-        strings.Play("Strings_Play");
+        //strings.Play("Strings_Play");
 
         PlayerController.instance.GetComponent<Animator>().SetBool("Funky", true);
 
         yield return new WaitForSecondsRealtime(14.5f);
 
-        flute.Play("Flute_Tap");
+        //flute.Play("Flute_Tap");
 
         yield return new WaitForSecondsRealtime(14f);
 
-        flute.Play("Flute_Play");
+        //flute.Play("Flute_Play");
 
         yield return new WaitForSecondsRealtime(14f);
 
-        flute.Play("Flute_Idle");
+        //flute.Play("Flute_Idle");
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        strings.Play("Strings_Idle");
+        //strings.Play("Strings_Idle");
 
         MessageDancers(0);
 
@@ -86,7 +86,7 @@ public class MusiciansHandler : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        drums.Play("Drums_Idle");
+        //drums.Play("Drums_Idle");
 
         yield return new WaitForSecondsRealtime(10f);
 
