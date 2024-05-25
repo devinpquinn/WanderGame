@@ -8,9 +8,12 @@ public class CameraZoomer : MonoBehaviour
 
     private float increment = 0.5f;
 
+    private float baseSize;
+
     private void Awake()
     {
         cam = GetComponent<Camera>();
+        baseSize = cam.orthographicSize;
     }
 
     private void Update()
@@ -27,6 +30,7 @@ public class CameraZoomer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             cam.transform.position = new Vector3(0, 0, -10);
+            cam.orthographicSize = baseSize;
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -44,6 +48,18 @@ public class CameraZoomer : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.L))
         {
             cam.transform.position = new Vector3(cam.transform.position.x + (increment * (cam.orthographicSize / 5)), cam.transform.position.y, -10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
     }
 }
