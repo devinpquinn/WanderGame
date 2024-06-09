@@ -7,6 +7,8 @@ public class FootstepSounds : MonoBehaviour
     private AudioSource footstepSource;
 
     public List<AudioClip> grassSounds;
+    public List<AudioClip> stoneSounds;
+    public bool grass = true;
 
     private int lastIndex;
 
@@ -22,12 +24,25 @@ public class FootstepSounds : MonoBehaviour
 
     public AudioClip GetGrassSound()
     {
-        int key = Random.Range(0, grassSounds.Count);
-        while (key == lastIndex)
+        if (grass)
         {
-            key = Random.Range(0, grassSounds.Count);
+            int key = Random.Range(0, grassSounds.Count);
+            while (key == lastIndex)
+            {
+                key = Random.Range(0, grassSounds.Count);
+            }
+            lastIndex = key;
+            return grassSounds[key];
         }
-        lastIndex = key;
-        return grassSounds[key];
+        else
+        {
+            int key = Random.Range(0, stoneSounds.Count);
+            while (key == lastIndex)
+            {
+                key = Random.Range(0, stoneSounds.Count);
+            }
+            lastIndex = key;
+            return stoneSounds[key];
+        }
     }
 }
