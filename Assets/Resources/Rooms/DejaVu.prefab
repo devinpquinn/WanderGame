@@ -153,8 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[0].lines.Array.data[0]
-      value: '"Funny... Last time we had this conversation, I was you and you were
-        me."'
+      value: '"Funny... Last time we talked, I was you and you were me."'
       objectReference: {fileID: 0}
     - target: {fileID: 4476952189876000264, guid: f9706b6d93618ec438d72028046251f3, type: 3}
       propertyPath: dialogs.Array.data[1].lines.Array.data[0]
