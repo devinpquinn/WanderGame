@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Runner : MonoBehaviour
 {
-    public int id = 0;
+    public bool solo;
 
     private Rigidbody2D rb;
     public float moveSpeed = 2.5f;
@@ -17,20 +17,20 @@ public class Runner : MonoBehaviour
 
     private void Start()
     {
-        if(id == 0)
+        if(solo)
         {
             BlockerManager.SetupBlockers("NESW");
             RoomManager.instance.currentRoom.GetComponent<Room>().doors = "NESW";
-        }
 
-        //check if we're returning to this room
-        if (PlayerPrefs.HasKey("Data_Runner_" + id))
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Data_Runner_" + id, 1);
+            //check if we're returning to this room
+            if (PlayerPrefs.HasKey("Data_Runner"))
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Data_Runner", 1);
+            }
         }
     }
 
