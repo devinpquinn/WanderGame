@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Runner : MonoBehaviour
 {
+    public int id = 0;
+
     private Rigidbody2D rb;
     public float moveSpeed = 2.5f;
-    Vector2 movement = new Vector2(-1, 0);
+    public Vector2 movement;
 
     private void Awake()
     {
@@ -15,17 +17,20 @@ public class Runner : MonoBehaviour
 
     private void Start()
     {
-        BlockerManager.SetupBlockers("NESW");
-        RoomManager.instance.currentRoom.GetComponent<Room>().doors = "NESW";
+        if(id == 0)
+        {
+            BlockerManager.SetupBlockers("NESW");
+            RoomManager.instance.currentRoom.GetComponent<Room>().doors = "NESW";
+        }
 
         //check if we're returning to this room
-        if (PlayerPrefs.HasKey("Data_Runner"))
+        if (PlayerPrefs.HasKey("Data_Runner_" + id))
         {
             gameObject.SetActive(false);
         }
         else
         {
-            PlayerPrefs.SetInt("Data_Runner", 1);
+            PlayerPrefs.SetInt("Data_Runner_" + id, 1);
         }
     }
 
