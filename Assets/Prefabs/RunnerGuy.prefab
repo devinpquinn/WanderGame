@@ -252,7 +252,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1aabda5fd1d878a458d878d27cedb516, type: 3}
   - {fileID: 8300000, guid: 2c7459e08042b8d47be895e26b8deb1a, type: 3}
   - {fileID: 8300000, guid: 5b023722f84ee6a4f804af18adf8342f, type: 3}
-  stoneSounds: []
+  stoneSounds:
+  - {fileID: 8300000, guid: c6b8f22225f0cb84c9cbfe0d06c31729, type: 3}
+  - {fileID: 8300000, guid: 65a3ddf70af9a334aadbf457d7333561, type: 3}
+  - {fileID: 8300000, guid: 40241280ac7d5bf41bd76ec8f67e4e5d, type: 3}
+  - {fileID: 8300000, guid: 82b54e954d25c9d4b8500a80c9f45f02, type: 3}
+  - {fileID: 8300000, guid: da22341268a43fc46841ecc0a04f8b1d, type: 3}
   grass: 1
 --- !u!114 &2745990519424220235
 MonoBehaviour:
