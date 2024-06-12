@@ -37,6 +37,7 @@ public class DryadHandler : MonoBehaviour
         PlayerController.instance.state = PlayerController.playerState.Locked;
         PlayerController.instance.gameObject.GetComponent<SpriteRenderer>().flipX = false;
         PlayerController.instance.movement = Vector2.zero;
+        PlayerController.instance.gameObject.GetComponent<Animator>().SetFloat("Speed", 0);
         PlayerController.instance.gameObject.GetComponent<Animator>().Play("Player_Transform");
 
         PlayerPrefs.SetFloat("Data_Dryad_X", PlayerController.instance.transform.position.x);
@@ -47,6 +48,13 @@ public class DryadHandler : MonoBehaviour
 
     public void EndTransform()
     {
+        StartCoroutine(End());
+    }
+
+    IEnumerator End()
+    {
+        yield return new WaitForEndOfFrame();
+
         Vector2 playerLocation = PlayerController.instance.transform.position;
         Vector2 treeLocation = transform.position;
 
