@@ -56,6 +56,7 @@ public class SleepyHandler : MonoBehaviour
 
         speaker.Play();
         RandomMusic.Fade(timer, 0);
+        BGMManager.Fade(timer, 0);
 
         float timerStart = timer;
         while(timer > 0)
@@ -93,6 +94,7 @@ public class SleepyHandler : MonoBehaviour
         PlayerController.instance.state = PlayerController.playerState.Exploring;
 
         RandomMusic.Fade(5f, 1);
+        BGMManager.Fade(5f, 1);
 
         SetFadeAlpha(1);
         guy.sprite = guyAsleep;
