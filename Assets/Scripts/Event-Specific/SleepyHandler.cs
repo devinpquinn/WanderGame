@@ -38,6 +38,12 @@ public class SleepyHandler : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        RandomMusic.Fade(3f, 1);
+        BGMManager.Fade(3f, 1);
+    }
+
     //start the sleepy timer and music
     public void StartSleepTimer()
     {
@@ -52,11 +58,12 @@ public class SleepyHandler : MonoBehaviour
         faderCanvas.sortingLayerName = "UI";
         faderCanvas.sortingOrder = -1;
 
-        yield return new WaitForSeconds(10);
+        BGMManager.Fade(10, 0);
+
+        yield return new WaitForSeconds(20);
 
         speaker.Play();
         RandomMusic.Fade(timer, 0);
-        BGMManager.Fade(timer, 0);
 
         float timerStart = timer;
         while(timer > 0)

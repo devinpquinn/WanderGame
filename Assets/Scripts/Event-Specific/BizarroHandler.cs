@@ -30,12 +30,4 @@ public class BizarroHandler : MonoBehaviour
 
         player.GetComponent<AudioSource>().enabled = true;
     }
-
-    private void OnDestroy()
-    {
-        player.GetComponent<SpriteRenderer>().enabled = true;
-        GameObject.Find("Persistent Environment/Blockers/Perimeter").SetActive(true);
-
-        player.GetComponent<AudioSource>().enabled = true;
-    }
 }
