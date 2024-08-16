@@ -20,11 +20,15 @@ public class MusiciansHandler : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(LoopPerformance());
+
+        BGMManager.Fade(0.5f, 0f);
     }
 
     private void OnDisable()
     {
         PlayerController.instance.GetComponent<Animator>().SetBool("Funky", false);
+
+        BGMManager.Fade(3f, 1f);
     }
 
     public void MessageDancers(int index)
