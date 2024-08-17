@@ -323,6 +323,8 @@ public class RoomManager : MonoBehaviour
         endingSplash.SetActive(true);
         if (reachedEndingPlusOne)
         {
+            BGMManager.Fade(0.5f, 0f);
+
             endingSource.volume = 0.5f;
             endingSource.Play();
         }
@@ -331,6 +333,8 @@ public class RoomManager : MonoBehaviour
 
     IEnumerator EndEndingSong()
     {
+        BGMManager.Fade(3f, 1f);
+
         endingSplash.SetActive(false);
         float startVolume = endingSource.volume;
         float timer = 0;
