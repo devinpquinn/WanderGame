@@ -267,7 +267,7 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(FadeNonDiegetic(0.5f, 1));
 
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
 
                 UnityEvent myEvent = new UnityEvent();
                 myEvent.AddListener(OpenMenu);

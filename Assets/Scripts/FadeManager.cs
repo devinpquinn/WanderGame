@@ -174,7 +174,7 @@ public class FadeManager : MonoBehaviour
         SetFadeAlpha(1);
 
         //set timescale to 0
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         //show cursor
         Cursor.lockState = CursorLockMode.Locked;

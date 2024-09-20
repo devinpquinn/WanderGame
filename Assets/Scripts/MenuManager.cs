@@ -47,7 +47,7 @@ public class MenuManager : MonoBehaviour
     private void OnEnable()
     {
         //set timescale to 0
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         //show cursor
         Cursor.lockState = CursorLockMode.None;
@@ -82,7 +82,7 @@ public class MenuManager : MonoBehaviour
     private void OnDisable()
     {
         //set timescale to 1
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
 
         //hide cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
     {
         if(PlayerController.instance.state == PlayerController.playerState.Crossing)
         {
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
         }
 
         UnityEvent myEvent = new UnityEvent();
